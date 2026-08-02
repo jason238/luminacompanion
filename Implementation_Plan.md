@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Tasks **0.1**, **0.2**, and **0.3** complete — Phase 0 foundation done
-- Next: Task **1.1** (Home)
+- Tasks **0.1**, **0.2**, **0.3**, and **1.1** complete
+- Next: Task **1.2** (Product) or **1.3** (Pilot) per suggested order
 
 ---
 
@@ -219,7 +219,7 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
 >
 > **Responsive (every page task):** build mobile-first. At Verify, check ~375px and desktop — no horizontal scroll; forms and CTAs usable on a phone; images scale down.
 
-- [ ] **1.1 — Home (`/`)**
+- [x] **1.1 — Home (`/`)**
   Hero → Growing understanding → Problem → How it works → **Real families (3 Pilot photos)** → Pilot progress → Waitlist capture → Footer CTA row.
   - CTAs → `/pilot` and `/volunteer`.
   - Waitlist form UI (Formspree in 3.1).

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/config.js" defer></script>
     <script src="js/nav.js" defer></script>
+    <script src="js/waitlist.js" defer></script>
   </head>
   <body class="flex min-h-screen flex-col antialiased">
     <header class="site-header">
@@ -48,17 +49,209 @@
       </div>
     </header>
 
-    <main class="page-main site-container grow">
-      <div class="page-stub">
-        <h1>Lumina Companion</h1>
-        <p>
-          Shared layout shell is ready — page content lands in the next tasks.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="/pilot/">Apply for the Pilot Program</a>
-          <a class="btn btn-secondary" href="/volunteer/">Join as a Volunteer</a>
+    <main class="page-main grow">
+      <!-- Hero -->
+      <section class="home-hero" aria-labelledby="home-hero-heading">
+        <div class="home-hero__media" aria-hidden="true">
+          <img
+            src="assets/images/pilot/grandma-xie.png"
+            alt=""
+            width="1600"
+            height="2000"
+            fetchpriority="high"
+          />
         </div>
-      </div>
+        <div class="home-hero__veil" aria-hidden="true"></div>
+        <div class="home-hero__content">
+          <h1 id="home-hero-heading" class="home-hero__brand">Lumina Companion</h1>
+          <p class="home-hero__subhead">A companion that grows to know your parent.</p>
+          <p class="home-hero__support">
+            Through everyday conversations, Lumina gradually learns routines,
+            memories, preferences, and wellbeing — helping your parent feel
+            understood and giving your family greater peace of mind.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/pilot/">Apply for the Pilot Program</a>
+            <a class="btn btn-secondary" href="/volunteer/">Join as a Volunteer</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Growing understanding -->
+      <section class="home-section home-understanding" aria-labelledby="home-understanding-heading">
+        <div class="home-section__inner">
+          <h2 id="home-understanding-heading" class="home-heading">
+            It gets to know your parent — not just what they said
+          </h2>
+          <p class="home-body">
+            Lumina doesn't just answer questions. It gets to know your parent over
+            time. Every conversation builds understanding — routines, memories,
+            preferences, mood, and wellbeing — so each interaction feels more
+            personal than the last.
+          </p>
+        </div>
+      </section>
+
+      <!-- The problem -->
+      <section class="home-section home-problem" aria-labelledby="home-problem-heading">
+        <div class="home-section__inner home-section__inner--narrow">
+          <h2 id="home-problem-heading" class="visually-hidden">Why Lumina exists</h2>
+          <p class="home-body">
+            Aging in place shouldn't mean aging alone. Many seniors spend long
+            stretches of the day without conversation, and their adult children carry
+            a quiet, constant worry: <em>Is Mom okay right now?</em> Lumina was built to ease
+            both.
+          </p>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="home-section" aria-labelledby="home-how-heading">
+        <div class="home-section__inner">
+          <h2 id="home-how-heading" class="home-heading">How it works</h2>
+          <ol class="home-steps">
+            <li class="home-step">
+              <span class="home-step__num" aria-hidden="true">1</span>
+              <h3>Tap to talk</h3>
+              <p>
+                Your parent taps the Lumina Hub — no wake words, no confusing setup.
+              </p>
+            </li>
+            <li class="home-step">
+              <span class="home-step__num" aria-hidden="true">2</span>
+              <h3>Lumina quietly keeps track</h3>
+              <p>
+                Through everyday conversation and a simple wearable, Lumina naturally
+                notices activity, rest, and mood — no check-ins, no chores.
+              </p>
+            </li>
+            <li class="home-step">
+              <span class="home-step__num" aria-hidden="true">3</span>
+              <h3>Family stays close</h3>
+              <p>
+                The Caregiver App gives you a clear, calm "All is well" view — and lets
+                you send love, memories, and messages back.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Real families -->
+      <section class="home-section home-families" aria-labelledby="home-families-heading">
+        <div class="home-section__inner">
+          <h2 id="home-families-heading" class="home-heading">Real families</h2>
+          <p class="home-lede">
+            These are real Ottawa families in our pilot program — not actors, not
+            stock photos.
+          </p>
+          <div class="home-families__grid">
+            <figure class="home-family">
+              <img
+                src="assets/images/pilot/grandma-tuen.png"
+                alt="Grandma Tuen reading on a tablet outdoors"
+                width="1200"
+                height="1500"
+                loading="lazy"
+              />
+              <figcaption>
+                Grandma Tuen, 75 — reading a memory Lumina helped create.
+              </figcaption>
+            </figure>
+            <figure class="home-family">
+              <img
+                src="assets/images/pilot/grandma-xie.png"
+                alt="Grandma Xie looking at a family photo on a tablet"
+                width="1200"
+                height="1500"
+                loading="lazy"
+              />
+              <figcaption>
+                Grandma Xie, 87 — video calling her grandkids.
+              </figcaption>
+            </figure>
+            <figure class="home-family">
+              <img
+                src="assets/images/pilot/michael.png"
+                alt="Michael seated with the Lumina Hub"
+                width="1200"
+                height="1500"
+                loading="lazy"
+              />
+              <figcaption>
+                Michael, 67 — a quiet afternoon with Lumina.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pilot progress -->
+      <section class="home-section home-pilot-progress" aria-labelledby="home-pilot-heading">
+        <div class="home-section__inner">
+          <h2 id="home-pilot-heading" class="home-heading">
+            Limited spots available for the Ottawa cohort — applications open.
+          </h2>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/pilot/">Apply for the Pilot Program</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Waitlist capture -->
+      <section class="home-section home-waitlist" aria-labelledby="home-waitlist-heading">
+        <div class="home-section__inner">
+          <h2 id="home-waitlist-heading" class="home-heading">
+            Not in Ottawa yet? Get updates as Lumina grows.
+          </h2>
+          <form class="home-waitlist-form" data-waitlist-form novalidate>
+            <div class="home-honeypot" hidden>
+              <label for="waitlist-gotcha">Leave blank</label>
+              <input
+                type="text"
+                id="waitlist-gotcha"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+            <div class="home-field">
+              <label for="waitlist-email">Email</label>
+              <input
+                id="waitlist-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <button class="btn btn-primary" type="submit">Notify me</button>
+            <p id="waitlist-error" class="home-form-error" data-waitlist-error hidden></p>
+          </form>
+          <p class="home-form-success" data-waitlist-success hidden>
+            Thanks — waitlist signup isn't live yet. Email
+            <a href="mailto:info@ivyfeeder.com">info@ivyfeeder.com</a> and we'll
+            add you.
+          </p>
+          <p class="home-form-note">
+            We'll only email you about Lumina — no spam, unsubscribe anytime.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer CTA row -->
+      <section class="home-footer-cta" aria-labelledby="home-footer-cta-heading">
+        <div class="home-section__inner">
+          <h2 id="home-footer-cta-heading" class="home-heading">
+            Ready to see Lumina in your parent's daily life?
+          </h2>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/pilot/">Apply for the Pilot Program</a>
+            <a class="btn btn-secondary" href="/volunteer/">Join as a Volunteer</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
