@@ -1,0 +1,12 @@
+{
+  "name": "luminacompanion",
+  "private": true,
+  "description": "Lumina Companion static marketing site (GitHub Pages)",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./css/styles.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
