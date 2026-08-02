@@ -8,40 +8,71 @@
       name="description"
       content="Lumina Companion is a companion that grows to know your parent through everyday conversation — helping them feel understood, and giving your family greater peace of mind. Now piloting in Ottawa, Canada."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/config.js" defer></script>
+    <script src="js/nav.js" defer></script>
   </head>
-  <body class="min-h-screen bg-stone-50 text-stone-900 antialiased">
-    <header class="border-b border-stone-200 bg-white/90">
-      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4">
-        <a href="/" class="text-lg font-semibold text-stone-900">Lumina Companion</a>
-        <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-stone-700" aria-label="Primary">
-          <a href="/">Home</a>
-          <a href="/product/">Product</a>
-          <a href="/pilot/">Pilot Program</a>
-          <a href="/volunteer/">Volunteer</a>
-          <a href="/about/">About</a>
-          <a href="/privacy/">Privacy</a>
-        </nav>
+  <body class="flex min-h-screen flex-col antialiased">
+    <header class="site-header">
+      <div class="site-container">
+        <div class="site-header__bar">
+          <div class="site-header__top">
+            <a href="/" class="brand">Lumina Companion</a>
+            <button
+              type="button"
+              class="nav-toggle"
+              data-nav-toggle
+              aria-controls="primary-nav"
+              aria-expanded="false"
+              aria-label="Open menu"
+            >
+              <span class="nav-toggle__icon" aria-hidden="true"></span>
+              <span>Menu</span>
+            </button>
+          </div>
+          <nav id="primary-nav" class="site-nav" data-nav-panel aria-label="Primary">
+            <a class="nav-link" href="/" aria-current="page">Home</a>
+            <a class="nav-link" href="/product/">Product</a>
+            <a class="nav-link" href="/pilot/">Pilot Program</a>
+            <a class="nav-link" href="/volunteer/">Volunteer</a>
+            <a class="nav-link" href="/about/">About</a>
+            <a class="nav-link" href="/privacy/">Privacy</a>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <main class="mx-auto max-w-5xl px-4 py-16">
-      <p class="text-lg text-stone-700">
-        Site scaffold is live. Full pages land next.
-      </p>
+    <main class="page-main site-container grow">
+      <div class="page-stub">
+        <h1>Lumina Companion</h1>
+        <p>
+          Shared layout shell is ready — page content lands in the next tasks.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/pilot/">Apply for the Pilot Program</a>
+          <a class="btn btn-secondary" href="/volunteer/">Join as a Volunteer</a>
+        </div>
+      </div>
     </main>
 
-    <footer class="border-t border-stone-200 bg-white">
-      <div class="mx-auto max-w-5xl space-y-4 px-4 py-8 text-sm text-stone-600">
-        <p>
+    <footer class="site-footer">
+      <div class="site-container">
+        <p class="site-footer__meta">
           Lumina is a product of IvyFeeder Inc.<br />
           © 2026 IvyFeeder Inc. All rights reserved.<br />
-          <a href="/privacy/" class="underline underline-offset-2">Privacy Policy</a>
-          ·
-          <a href="mailto:info@ivyfeeder.com" class="underline underline-offset-2">Contact</a>
+          <span class="site-footer__links">
+            <a href="/privacy/">Privacy Policy</a>
+            <span aria-hidden="true">·</span>
+            <a href="mailto:info@ivyfeeder.com">Contact</a>
+          </span>
         </p>
-        <p>
+        <p class="site-footer__disclaimer">
           Lumina Companion is a non-medical wellness device intended for
           informational and social engagement purposes only. It is not designed or
           intended to diagnose, treat, cure, or prevent any disease or health

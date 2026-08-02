@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Task **0.1** implemented locally (shell pages + committed Tailwind) — run Verify, then check the box
-- Next after Verify: Task **0.2**
+- Tasks **0.1**, **0.2**, and **0.3** complete — Phase 0 foundation done
+- Next: Task **1.1** (Home)
 
 ---
 
@@ -174,7 +174,7 @@ luminacompanion/
 
 Goal: tooling, visual system, and shared chrome — no full marketing pages yet.
 
-- [ ] **0.1 — Project scaffold + committed Tailwind CSS**
+- [x] **0.1 — Project scaffold + committed Tailwind CSS**
   Replace the under-construction placeholder with a minimal but real shell.
   - Set up Tailwind so **`css/styles.css` is generated locally and committed** (standalone CLI or local `npx` — document the one command in README).
   - **Do not** add a GitHub Actions build for Pages deploy.
@@ -189,7 +189,7 @@ Goal: tooling, visual system, and shared chrome — no full marketing pages yet.
   **OUT OF SCOPE:** full Home sections; French; live Formspree submissions (endpoint may be placeholder).
   *Verify: push → `www.luminacompanion.ca` still loads; `CNAME` intact; page source has **no** `jason.ottawa@gmail.com`; viewport meta present; Tailwind classes from committed CSS work offline.*
 
-- [ ] **0.2 — Design tokens + shared layout (nav, footer, CTAs) — responsive shell**
+- [x] **0.2 — Design tokens + shared layout (nav, footer, CTAs) — responsive shell**
   Establish the look once so every page task only fills content.
   - Colors, typography, spacing, button styles (primary / secondary CTAs from v3).
   - Shared **primary nav:** Home · Product · Pilot Program · Volunteer · About · Privacy.
@@ -200,7 +200,7 @@ Goal: tooling, visual system, and shared chrome — no full marketing pages yet.
   **OUT OF SCOPE:** page-specific sections; Formspree wiring.
   *Verify: stub page at ~375px and desktop — nav usable both ways; no horizontal scroll; disclaimer readable; public email is info@ivyfeeder.com only.*
 
-- [ ] **0.3 — Asset conventions + placeholders**
+- [x] **0.3 — Asset conventions + placeholders**
   - Confirm paths for existing files:
     - `assets/images/pilot/grandma-tuen.png`, `grandma-xie.png`, `michael.png`
     - `assets/images/og/og-default.png`
