@@ -21,6 +21,8 @@ Copy source: `lumina_website_v3.md`. Compress large Pilot/OG PNGs in Task **2.3*
 | **Present** | `images/product/health-scale.png` | Product → Health Scale |
 | **Present** | `images/diagrams/vision-ecosystem.png` | About + Product vision |
 | **Present** | `icons/step-*.svg` | Home How-it-works icons (Lucide, ISC) |
+| **Present** | `images/brand/lumina-logo.png` | Transparent nav mark (L + spark); white/glow removed |
+| **Present** | `images/brand/lumina-logo-mark.png` | Smaller header-sized copy of the mark |
 
 ---
 
@@ -87,6 +89,17 @@ assets/images/og/
 | File | Used for (v3) |
 |---|---|
 | `vision-ecosystem.png` | About + Product vision; Core vs Roadmap must stay visually distinct |
+
+---
+
+## Brand — `images/brand/`
+
+| File | Used for |
+|---|---|
+| `lumina-logo.png` | Site header brand mark (transparent PNG; white plate + soft glow removed) |
+| `lumina-logo-mark.png` | Compact copy of the same mark |
+
+The warm yellow→orange→peach mark sits on the cool mist canvas without a white box; CSS adds a light warm drop-shadow so edges stay readable.
 
 ---
 
