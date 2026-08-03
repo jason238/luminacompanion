@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, **1.3**, **1.4**, **1.5**, and **1.6** complete
-- Next: Task **2.1** (SEO + social meta + sitemap)
+- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, **1.3**, **1.4**, **1.5**, **1.6**, and **3.1** complete
+- Next: Task **2.1** (SEO + social meta + sitemap) — or **3.2** if forms are the priority after Formspree endpoint is live
 
 ---
 
@@ -288,7 +288,7 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
 
 Goal: every form emails Jason; waitlist count editable; no personal gmail in HTML.
 
-- [ ] **3.1 — Wire all forms to Formspree**
+- [x] **3.1 — Wire all forms to Formspree**
   Forms: Home waitlist · Pilot · Volunteer · About · Privacy.
   - Endpoints from `js/config.js`; honeypot; distinct `_subject` lines (e.g. `[Lumina] Pilot application`).
   - Success → v3 confirmation copy; failure → plain-language error.

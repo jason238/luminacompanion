@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/config.js" defer></script>
+    <script src="js/forms.js" defer></script>
     <script src="js/nav.js" defer></script>
     <script src="js/waitlist.js" defer></script>
   </head>
@@ -228,6 +229,8 @@
             Not in Ottawa yet? Get updates as Lumina grows.
           </h2>
           <form class="home-waitlist-form" data-waitlist-form novalidate>
+            <input type="hidden" name="form_type" value="waitlist" />
+            <input type="hidden" name="_subject" value="[Lumina] Waitlist signup" />
             <div class="home-honeypot" hidden>
               <label for="waitlist-gotcha">Leave blank</label>
               <input
@@ -252,10 +255,14 @@
             <button class="btn btn-primary" type="submit">Notify me</button>
             <p id="waitlist-error" class="home-form-error" data-waitlist-error hidden></p>
           </form>
-          <p class="home-form-success" data-waitlist-success hidden>
-            Thanks — waitlist signup isn't live yet. Email
-            <a href="mailto:info@ivyfeeder.com">info@ivyfeeder.com</a> and we'll
-            add you.
+          <p
+            class="home-form-success"
+            data-waitlist-success
+            tabindex="-1"
+            role="status"
+            hidden
+          >
+            Thanks — you're on the list. We'll only email you about Lumina.
           </p>
           <p class="home-form-note">
             We'll only email you about Lumina — no spam, unsubscribe anytime.

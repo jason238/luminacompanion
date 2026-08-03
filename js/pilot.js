@@ -1,5 +1,5 @@
 /**
- * Pilot application form — UI validation only (Formspree wiring is Task 3.1).
+ * Pilot application form — validates fields, then POSTs to Formspree via LuminaForms.
  */
 (function () {
   function initPilotForm() {
@@ -111,12 +111,28 @@
         return;
       }
 
-      // Formspree submit arrives in Task 3.1 — show v3 confirmation for now.
-      form.hidden = true;
-      if (successEl) {
-        successEl.hidden = false;
-        successEl.focus();
+      if (!window.LuminaForms) {
+        showError("Something went wrong. Please try again later.");
+        return;
       }
+
+      window.LuminaForms.setSubmitting(form, true);
+
+      window.LuminaForms
+        .submit(form)
+        .then(function () {
+          form.hidden = true;
+          if (successEl) {
+            successEl.hidden = false;
+            successEl.focus();
+          }
+        })
+        .catch(function () {
+          showError(window.LuminaForms.errorMessage());
+        })
+        .then(function () {
+          window.LuminaForms.setSubmitting(form, false);
+        });
     });
   }
 

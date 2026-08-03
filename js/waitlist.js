@@ -1,5 +1,5 @@
 /**
- * Home waitlist form — UI validation only (Formspree wiring is Task 3.1).
+ * Home waitlist form — validates email, then POSTs to Formspree via LuminaForms.
  */
 (function () {
   function initWaitlist() {
@@ -45,11 +45,27 @@
         return;
       }
 
-      // Formspree submit arrives in Task 3.1 — acknowledge valid input for now.
-      if (successEl) {
-        successEl.hidden = false;
+      if (!window.LuminaForms) {
+        showError("Something went wrong. Please try again later.");
+        return;
       }
-      form.reset();
+
+      window.LuminaForms.setSubmitting(form, true);
+
+      window.LuminaForms
+        .submit(form)
+        .then(function () {
+          if (successEl) {
+            successEl.hidden = false;
+          }
+          form.reset();
+        })
+        .catch(function () {
+          showError(window.LuminaForms.errorMessage());
+        })
+        .then(function () {
+          window.LuminaForms.setSubmitting(form, false);
+        });
     });
   }
 

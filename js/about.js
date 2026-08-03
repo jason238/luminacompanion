@@ -1,6 +1,5 @@
 /**
- * About page — waitlist count from config + contact form UI validation
- * (Formspree wiring is Task 3.1).
+ * About page — waitlist count from config + contact form Formspree submit.
  */
 (function () {
   function initWaitlistCount() {
@@ -77,13 +76,29 @@
         return;
       }
 
-      // Formspree submit arrives in Task 3.1 — show confirmation for now.
-      form.hidden = true;
-      if (microEl) microEl.hidden = true;
-      if (successEl) {
-        successEl.hidden = false;
-        successEl.focus();
+      if (!window.LuminaForms) {
+        showError("Something went wrong. Please try again later.");
+        return;
       }
+
+      window.LuminaForms.setSubmitting(form, true);
+
+      window.LuminaForms
+        .submit(form)
+        .then(function () {
+          form.hidden = true;
+          if (microEl) microEl.hidden = true;
+          if (successEl) {
+            successEl.hidden = false;
+            successEl.focus();
+          }
+        })
+        .catch(function () {
+          showError(window.LuminaForms.errorMessage());
+        })
+        .then(function () {
+          window.LuminaForms.setSubmitting(form, false);
+        });
     });
   }
 
