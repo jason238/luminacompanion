@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Tasks **0.1**, **0.2**, **0.3**, **1.1**, and **1.2** complete
-- Next: Task **1.3** (Pilot Program)
+- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, and **1.3** complete
+- Next: Task **1.4** (Volunteer)
 
 ---
 
@@ -234,7 +234,7 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
   **OUT OF SCOPE:** interactive demos; app stores.
   *Verify: Core vs Roadmap distinct; no delivery dates; CTA → `/pilot`; phone + desktop OK.*
 
-- [ ] **1.3 — Pilot Program (`/pilot`)**
+- [x] **1.3 — Pilot Program (`/pilot`)**
   Full Pilot page + application form UI (all v3 fields) + confirmation copy stub.
   - Form fields full-width and easy to tap on phone.
   **OUT OF SCOPE:** Formspree POST (3.1); Calendly.

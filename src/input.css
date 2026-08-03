@@ -1045,6 +1045,397 @@
     }
   }
 
+  /* ---- Pilot page ---- */
+  .pilot-hero {
+    position: relative;
+    min-height: min(88vh, 44rem);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    color: #f7faf8;
+  }
+
+  .pilot-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .pilot-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    animation: home-hero-ken 14s ease-out both;
+  }
+
+  .pilot-hero__veil {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15, 32, 28, 0.28) 0%,
+        rgba(15, 32, 28, 0.45) 45%,
+        rgba(15, 32, 28, 0.88) 100%
+      );
+  }
+
+  .pilot-hero__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 4.5rem 0 3rem;
+    animation: home-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .pilot-hero__copy {
+    width: min(70rem, calc(100% - 2rem));
+    margin-inline: auto;
+    max-width: 36rem;
+  }
+
+  .pilot-hero__brand {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(2.2rem, 5.5vw, 3.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #f7faf8;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .pilot-hero__headline {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.45rem, 3.2vw, 2rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #f3efe6;
+  }
+
+  .pilot-hero__subhead {
+    margin: 0;
+    max-width: 32rem;
+    color: rgba(247, 250, 248, 0.92);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+
+  .pilot-hero .btn-row {
+    margin-top: 1.5rem;
+  }
+
+  .pilot-section {
+    padding-block: 3.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .pilot-section {
+      padding-block: 4rem;
+    }
+  }
+
+  .pilot-section--alt {
+    background: color-mix(in oklab, var(--color-surface) 72%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .pilot-section__inner {
+    width: min(70rem, calc(100% - 2rem));
+    margin-inline: auto;
+    max-width: 40rem;
+  }
+
+  .pilot-section__inner--narrow {
+    max-width: 34rem;
+  }
+
+  .pilot-section__inner--form {
+    max-width: 36rem;
+  }
+
+  .pilot-heading {
+    margin: 0 0 1.15rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--color-pine-dark);
+  }
+
+  .pilot-subheading {
+    margin: 2rem 0 0.65rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.25rem;
+    letter-spacing: -0.015em;
+    color: var(--color-pine-dark);
+  }
+
+  .pilot-body {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .pilot-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .pilot-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--color-ink-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .pilot-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: var(--color-moss);
+  }
+
+  .pilot-list strong {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .pilot-spots {
+    padding-block: 3.5rem;
+    background:
+      linear-gradient(
+        165deg,
+        color-mix(in oklab, var(--color-pine) 92%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
+      );
+    color: #eef4f1;
+    text-align: center;
+  }
+
+  .pilot-spots .pilot-heading {
+    color: #f7faf8;
+    margin-inline: auto;
+    max-width: 26ch;
+  }
+
+  .pilot-spots .pilot-body {
+    color: color-mix(in oklab, #eef4f1 88%, transparent);
+    margin-inline: auto;
+  }
+
+  .pilot-voices {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(154, 123, 82, 0.08), transparent 55%),
+      color-mix(in oklab, var(--color-canvas-deep) 35%, var(--color-surface));
+  }
+
+  .pilot-apply {
+    padding-block: 3.5rem 4.5rem;
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 0%, rgba(90, 125, 108, 0.14), transparent 65%),
+      color-mix(in oklab, var(--color-canvas-deep) 40%, var(--color-surface));
+    border-top: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .pilot-apply__lead {
+    margin-bottom: 1.75rem;
+  }
+
+  .pilot-form {
+    position: relative;
+    display: grid;
+    gap: 1.15rem;
+  }
+
+  .pilot-field {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .pilot-field label,
+  .pilot-fieldset legend {
+    color: var(--color-ink);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .pilot-field input,
+  .pilot-field select,
+  .pilot-field textarea {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .pilot-field textarea {
+    min-height: 6.5rem;
+    resize: vertical;
+  }
+
+  .pilot-field select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--color-ink-muted) 50%),
+      linear-gradient(135deg, var(--color-ink-muted) 50%, transparent 50%);
+    background-position:
+      calc(100% - 1.35rem) 50%,
+      calc(100% - 0.95rem) 50%;
+    background-size: 0.4rem 0.4rem, 0.4rem 0.4rem;
+    background-repeat: no-repeat;
+    padding-right: 2.5rem;
+  }
+
+  .pilot-field input:focus,
+  .pilot-field select:focus,
+  .pilot-field textarea:focus {
+    border-color: var(--color-pine);
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-moss) 28%, transparent);
+  }
+
+  .pilot-field input[aria-invalid="true"],
+  .pilot-field select[aria-invalid="true"],
+  .pilot-field textarea[aria-invalid="true"] {
+    border-color: #8b3a3a;
+  }
+
+  .pilot-fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .pilot-fieldset legend {
+    margin-bottom: 0.65rem;
+    padding: 0;
+  }
+
+  .pilot-choices {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  @media (min-width: 480px) {
+    .pilot-choices {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+  }
+
+  .pilot-choice {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3rem;
+    padding: 0.65rem 1rem;
+    border: 1.5px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .pilot-choice:has(input:focus-visible) {
+    border-color: var(--color-pine);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-moss) 28%, transparent);
+  }
+
+  .pilot-choice:has(input:checked) {
+    border-color: var(--color-pine);
+    background: color-mix(in oklab, var(--color-moss) 12%, var(--color-surface));
+  }
+
+  .pilot-choice input {
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: var(--color-pine);
+    flex-shrink: 0;
+  }
+
+  .pilot-form__submit {
+    width: 100%;
+    margin-top: 0.35rem;
+  }
+
+  @media (min-width: 640px) {
+    .pilot-form__submit {
+      width: auto;
+      justify-self: start;
+    }
+  }
+
+  .pilot-form-error,
+  .pilot-form-success {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .pilot-form-error {
+    color: #8b3a3a;
+    font-weight: 700;
+  }
+
+  .pilot-form-success {
+    margin-top: 0.5rem;
+    padding: 1.25rem 0;
+    color: var(--color-pine-dark);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+  }
+
+  .pilot-honeypot {
+    position: absolute !important;
+    left: -10000px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pilot-hero__media img,
+    .pilot-hero__content {
+      animation: none;
+    }
+
+    .pilot-hero__media img {
+      transform: none;
+    }
+  }
+
   /* ---- Footer ---- */
   .site-footer {
     margin-top: auto;

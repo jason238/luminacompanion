@@ -6,7 +6,7 @@
     <title>Lumina Companion — Pilot Program</title>
     <meta
       name="description"
-      content="Lumina Companion is a companion that grows to know your parent through everyday conversation — helping them feel understood, and giving your family greater peace of mind. Now piloting in Ottawa, Canada."
+      content="Join the Ottawa Pilot Program — free devices, free accounts, and real support from the person who built Lumina Companion."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/config.js" defer></script>
     <script src="../js/nav.js" defer></script>
+    <script src="../js/pilot.js" defer></script>
   </head>
-  <body class="flex min-h-screen flex-col antialiased">
+  <body class="min-h-screen antialiased" style="display: flex; flex-direction: column; min-height: 100vh">
     <header class="site-header">
       <div class="site-container">
         <div class="site-header__bar">
@@ -48,15 +49,267 @@
       </div>
     </header>
 
-    <main class="page-main page-main--stub site-container grow">
-      <div class="page-stub">
-        <h1>Pilot Program</h1>
-        <p>Shared layout shell is ready — Pilot content lands in Task 1.3.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="./">Apply for the Pilot Program</a>
-          <a class="btn btn-secondary" href="../volunteer/">Join as a Volunteer</a>
+    <main class="page-main grow">
+      <!-- Hero -->
+      <section class="pilot-hero" aria-labelledby="pilot-hero-heading">
+        <div class="pilot-hero__media" aria-hidden="true">
+          <img
+            src="../assets/images/pilot/grandma-xie.png"
+            alt=""
+            width="1600"
+            height="2000"
+            fetchpriority="high"
+          />
         </div>
-      </div>
+        <div class="pilot-hero__veil" aria-hidden="true"></div>
+        <div class="pilot-hero__content">
+          <div class="pilot-hero__copy">
+            <p class="pilot-hero__brand">Lumina Companion</p>
+            <h1 id="pilot-hero-heading" class="pilot-hero__headline">
+              Join the Ottawa Pilot Program
+            </h1>
+            <p class="pilot-hero__subhead">
+              Free devices. Free accounts. Real support from the person who built
+              it.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#apply">Apply for the Pilot Program</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 — What we provide -->
+      <section class="pilot-section" aria-labelledby="pilot-provide-heading">
+        <div class="pilot-section__inner">
+          <h2 id="pilot-provide-heading" class="pilot-heading">What we provide</h2>
+          <ul class="pilot-list">
+            <li>A Lumina Hub, fully set up in your parent's home</li>
+            <li>A Lumina Wearable ring</li>
+            <li>Free Senior and Caregiver accounts — no subscription during the pilot</li>
+          </ul>
+          <h3 class="pilot-subheading">Why is this free?</h3>
+          <p class="pilot-body">
+            We're looking for a small group of families to help us improve Lumina
+            before a broader launch.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2 — What we ask of you -->
+      <section class="pilot-section pilot-section--alt" aria-labelledby="pilot-ask-heading">
+        <div class="pilot-section__inner">
+          <h2 id="pilot-ask-heading" class="pilot-heading">What we ask of you</h2>
+          <ul class="pilot-list">
+            <li>Openness to sharing feedback as we improve Lumina together</li>
+            <li>A short conversation or two about your experience</li>
+            <li>Patience — this is an early pilot, and things may not be perfect</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 3 — Who this is for -->
+      <section class="pilot-section" aria-labelledby="pilot-who-heading">
+        <div class="pilot-section__inner">
+          <h2 id="pilot-who-heading" class="pilot-heading">Who this is for</h2>
+          <ul class="pilot-list">
+            <li>
+              Currently open to <strong>Ottawa, Ontario residents only</strong>. As
+              an early pilot, we provide hands-on setup and in-person support, which
+              means we need to be nearby.
+            </li>
+            <li>
+              Best suited for a senior living independently or semi-independently,
+              with a family member who wants a clearer view of their day-to-day
+              wellbeing.
+            </li>
+            <li>A stable home WiFi connection is required.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 4 — Spots remaining -->
+      <section class="pilot-spots" aria-labelledby="pilot-spots-heading">
+        <div class="pilot-section__inner pilot-section__inner--narrow">
+          <h2 id="pilot-spots-heading" class="pilot-heading">
+            Limited spots available for the Ottawa cohort.
+          </h2>
+          <p class="pilot-body">
+            Applications are reviewed on a rolling basis — we'll follow up
+            personally with next steps.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4.5 — Voices from the pilot (placeholder) -->
+      <section class="pilot-section pilot-voices" aria-labelledby="pilot-voices-heading">
+        <div class="pilot-section__inner pilot-section__inner--narrow">
+          <h2 id="pilot-voices-heading" class="pilot-heading">
+            From our pilot families
+          </h2>
+          <p class="pilot-body">
+            Early pilot families are beginning to try Lumina. We'll be sharing their
+            stories and experiences here as the pilot progresses.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5 — Application form -->
+      <section class="pilot-apply" id="apply" aria-labelledby="pilot-apply-heading">
+        <div class="pilot-section__inner pilot-section__inner--form">
+          <h2 id="pilot-apply-heading" class="pilot-heading">Apply for the Pilot Program</h2>
+          <p class="pilot-body pilot-apply__lead">
+            Open to Ottawa, Ontario residents only. We'll review every application
+            personally.
+          </p>
+
+          <form class="pilot-form" data-pilot-form novalidate>
+            <input type="hidden" name="form_type" value="pilot" />
+            <input type="hidden" name="_subject" value="[Lumina] Pilot application" />
+
+            <div class="pilot-honeypot" hidden>
+              <label for="pilot-gotcha">Leave blank</label>
+              <input
+                type="text"
+                id="pilot-gotcha"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="pilot-field">
+              <label for="pilot-name">Your name</label>
+              <input
+                id="pilot-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="pilot-field">
+              <label for="pilot-email">Your email</label>
+              <input
+                id="pilot-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="pilot-field">
+              <label for="pilot-phone">Your phone number</label>
+              <input
+                id="pilot-phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <div class="pilot-field">
+              <label for="pilot-relationship">Your relationship to the senior</label>
+              <select id="pilot-relationship" name="relationship" required>
+                <option value="">Select one</option>
+                <option value="self">Self</option>
+                <option value="adult_child">Adult child</option>
+                <option value="other_caregiver">Other caregiver</option>
+              </select>
+            </div>
+
+            <div class="pilot-field">
+              <label for="pilot-city">Senior's city (must be Ottawa, ON)</label>
+              <input
+                id="pilot-city"
+                name="senior_city"
+                type="text"
+                autocomplete="address-level2"
+                placeholder="Ottawa, ON"
+                required
+              />
+            </div>
+
+            <div class="pilot-field">
+              <label for="pilot-situation">
+                A brief description of the senior's living situation and general
+                wellbeing (1–2 sentences)
+              </label>
+              <textarea
+                id="pilot-situation"
+                name="living_situation"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <fieldset class="pilot-fieldset">
+              <legend>Do you have stable home WiFi?</legend>
+              <div class="pilot-choices">
+                <label class="pilot-choice">
+                  <input type="radio" name="wifi" value="yes" required />
+                  <span>Yes</span>
+                </label>
+                <label class="pilot-choice">
+                  <input type="radio" name="wifi" value="no" required />
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="pilot-fieldset">
+              <legend>Preferred language</legend>
+              <div class="pilot-choices">
+                <label class="pilot-choice">
+                  <input type="radio" name="language" value="english" required />
+                  <span>English</span>
+                </label>
+                <label class="pilot-choice">
+                  <input type="radio" name="language" value="french" required />
+                  <span>French</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="pilot-fieldset">
+              <legend>
+                Are you open to occasional check-ins or a short interview about your
+                experience?
+              </legend>
+              <div class="pilot-choices">
+                <label class="pilot-choice">
+                  <input type="radio" name="checkins" value="yes" required />
+                  <span>Yes</span>
+                </label>
+                <label class="pilot-choice">
+                  <input type="radio" name="checkins" value="no" required />
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <p id="pilot-error" class="pilot-form-error" data-pilot-error hidden></p>
+
+            <button class="btn btn-primary pilot-form__submit" type="submit">
+              Apply for the Pilot Program
+            </button>
+          </form>
+
+          <p
+            class="pilot-form-success"
+            data-pilot-success
+            tabindex="-1"
+            role="status"
+            hidden
+          >
+            Thank you — we'll review your application and follow up personally
+            within a few days.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
