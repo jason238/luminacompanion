@@ -508,20 +508,22 @@
     animation-delay: 240ms;
   }
 
-  .home-step__num {
+  .home-step__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 3rem;
+    height: 3rem;
     margin-bottom: 0.85rem;
     border-radius: 999px;
     border: 1.5px solid var(--color-line);
     background: var(--color-surface);
     color: var(--color-pine);
-    font-family: var(--font-display);
-    font-weight: 650;
-    font-size: 1.05rem;
+  }
+
+  .home-step__icon img {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .home-step h3 {

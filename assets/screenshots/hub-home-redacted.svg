@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder - Lumina Hub home screenshot</title>
-  <desc id="desc">Replace with redacted Hub home screen PNG (hub-home-redacted.png).</desc>
-  <rect width="1200" height="800" fill="#eef2f0"/>
-  <rect x="48" y="48" width="1104" height="704" rx="24" fill="#f7faf8" stroke="#c5d0ca" stroke-width="2"/>
-  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#1e4337">Lumina Hub</text>
-  <text x="600" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" fill="#4a5c57">Placeholder - redacted home screenshot pending</text>
-  <text x="600" y="470" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" fill="#5a7d6c">assets/screenshots/hub-home-redacted.png</text>
-</svg>
