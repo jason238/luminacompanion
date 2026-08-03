@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, and **1.3** complete
-- Next: Task **1.4** (Volunteer)
+- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, **1.3**, **1.4**, **1.5**, and **1.6** complete
+- Next: Task **2.1** (SEO + social meta + sitemap)
 
 ---
 
@@ -240,19 +240,19 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
   **OUT OF SCOPE:** Formspree POST (3.1); Calendly.
   *Verify: Ottawa-only clear; all fields present; confirmation copy matches v3; form usable at ~375px.*
 
-- [ ] **1.4 — Volunteer (`/volunteer`)**
+- [x] **1.4 — Volunteer (`/volunteer`)**
   Full Volunteer page + application form UI.
   - Roles stack cleanly on phone.
   **OUT OF SCOPE:** Affiliate program page; Formspree POST.
   *Verify: both roles; form fields match v3; phone + desktop OK.*
 
-- [ ] **1.5 — About (`/about`)**
+- [x] **1.5 — About (`/about`)**
   Full About page; traction waitlist count from `config.js`; founder copy; contact form UI.
   - Vision diagram scales on narrow screens (scroll or fit — no overflow).
   **OUT OF SCOPE:** pitch-deck PDF; live waitlist API.
   *Verify: count from config; forms present; public email policy; phone + desktop OK.*
 
-- [ ] **1.6 — Privacy (`/privacy`)**
+- [x] **1.6 — Privacy (`/privacy`)**
   Full Privacy page per v3; disclose Formspree as form processor (same spirit as ivyfeeder privacy); contact form UI.
   - Keep softened voice-data wording. Long text readable on phone (comfortable line length / padding).
   **OUT OF SCOPE:** legal counsel rewrite; cookie banner.

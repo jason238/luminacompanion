@@ -6,7 +6,7 @@
     <title>Lumina Companion — Volunteer</title>
     <meta
       name="description"
-      content="Lumina Companion is a companion that grows to know your parent through everyday conversation — helping them feel understood, and giving your family greater peace of mind. Now piloting in Ottawa, Canada."
+      content="Help Lumina reach more families — volunteer as a Community Ambassador or Content & Social Media Volunteer with the independent founder building Lumina Companion."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/config.js" defer></script>
     <script src="../js/nav.js" defer></script>
+    <script src="../js/volunteer.js" defer></script>
   </head>
-  <body class="flex min-h-screen flex-col antialiased">
+  <body class="min-h-screen antialiased" style="display: flex; flex-direction: column; min-height: 100vh">
     <header class="site-header">
       <div class="site-container">
         <div class="site-header__bar">
@@ -48,15 +49,213 @@
       </div>
     </header>
 
-    <main class="page-main page-main--stub site-container grow">
-      <div class="page-stub">
-        <h1>Volunteer</h1>
-        <p>Shared layout shell is ready — Volunteer content lands in Task 1.4.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="../pilot/">Apply for the Pilot Program</a>
-          <a class="btn btn-secondary" href="./">Join as a Volunteer</a>
+    <main class="page-main grow">
+      <!-- Hero -->
+      <section class="volunteer-hero" aria-labelledby="volunteer-hero-heading">
+        <div class="volunteer-hero__inner">
+          <p class="volunteer-hero__brand">Lumina Companion</p>
+          <h1 id="volunteer-hero-heading" class="volunteer-hero__headline">
+            Help Lumina Reach More Families
+          </h1>
+          <p class="volunteer-hero__subhead">
+            I'm building Lumina as an independent founder — and I'm looking for a
+            few people who believe in this mission to help me get the word out.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#apply">Join as a Volunteer</a>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Section 1 — Why we need you -->
+      <section class="volunteer-section" aria-labelledby="volunteer-why-heading">
+        <div class="volunteer-section__inner">
+          <h2 id="volunteer-why-heading" class="volunteer-heading">Why we need you</h2>
+          <p class="volunteer-body">
+            Lumina is still small — one founder, a handful of pilot families, and a
+            lot of work ahead. If you care about seniors living well and staying
+            connected to their families, there's real, meaningful work here.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2 — Roles -->
+      <section class="volunteer-section volunteer-section--alt" aria-labelledby="volunteer-roles-heading">
+        <div class="volunteer-section__inner volunteer-section__inner--wide">
+          <h2 id="volunteer-roles-heading" class="volunteer-heading">Roles</h2>
+          <div class="volunteer-roles">
+            <article class="volunteer-role" aria-labelledby="volunteer-role-ambassador">
+              <h3 id="volunteer-role-ambassador" class="volunteer-role__title">
+                Community Ambassador
+              </h3>
+              <p class="volunteer-body">
+                If you're connected to Ottawa's senior-care community — through
+                caregiving, a local organization, or your own network — help us reach
+                families who could benefit from Lumina. You understand the people we're
+                trying to help better than anyone.
+              </p>
+              <ul class="volunteer-list">
+                <li>Introduce Lumina to caregivers and community groups</li>
+                <li>Help refer families to the pilot program</li>
+                <li>Share honest feedback from the community</li>
+              </ul>
+            </article>
+
+            <article class="volunteer-role" aria-labelledby="volunteer-role-content">
+              <h3 id="volunteer-role-content" class="volunteer-role__title">
+                Content &amp; Social Media Volunteer
+              </h3>
+              <p class="volunteer-body">
+                Help tell Lumina's story — through photos, short videos, and social
+                posts that show what the pilot experience is really like.
+              </p>
+              <ul class="volunteer-list">
+                <li>Create short-form content (photos, video, social posts)</li>
+                <li>Help document pilot family stories (with consent)</li>
+                <li>Support early marketing efforts</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 — What this looks like -->
+      <section class="volunteer-section" aria-labelledby="volunteer-looks-heading">
+        <div class="volunteer-section__inner">
+          <h2 id="volunteer-looks-heading" class="volunteer-heading">
+            What this looks like
+          </h2>
+          <ul class="volunteer-list">
+            <li>Flexible — roughly 3–5 hours a week, on your own schedule</li>
+            <li>No fixed contract, no pressure — just honest collaboration</li>
+            <li>Direct access to the founder, not a layer of management</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 4 — What you get -->
+      <section class="volunteer-section volunteer-section--alt" aria-labelledby="volunteer-get-heading">
+        <div class="volunteer-section__inner">
+          <h2 id="volunteer-get-heading" class="volunteer-heading">What you get</h2>
+          <ul class="volunteer-list">
+            <li>Free hands-on experience with the product from day one</li>
+            <li>
+              A genuine reference / letter of recommendation for your contribution
+            </li>
+          </ul>
+          <p class="volunteer-body volunteer-affiliate-note">
+            Interested in earning through introductions instead? Ask about our
+            separate <strong>Affiliate / Referral Partner</strong> arrangement — a
+            distinct, structured program for people who want to formally refer pilot
+            families or partners, kept separate from volunteering.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5 — Application form -->
+      <section class="volunteer-apply" id="apply" aria-labelledby="volunteer-apply-heading">
+        <div class="volunteer-section__inner volunteer-section__inner--form">
+          <h2 id="volunteer-apply-heading" class="volunteer-heading">
+            Join as a Volunteer
+          </h2>
+
+          <form class="volunteer-form" data-volunteer-form novalidate>
+            <input type="hidden" name="form_type" value="volunteer" />
+            <input type="hidden" name="_subject" value="[Lumina] Volunteer application" />
+
+            <div class="volunteer-honeypot" hidden>
+              <label for="volunteer-gotcha">Leave blank</label>
+              <input
+                type="text"
+                id="volunteer-gotcha"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="volunteer-field">
+              <label for="volunteer-name">Your name</label>
+              <input
+                id="volunteer-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="volunteer-field">
+              <label for="volunteer-email">Your email</label>
+              <input
+                id="volunteer-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="volunteer-field">
+              <label for="volunteer-role">Which role interests you?</label>
+              <select id="volunteer-role" name="role" required>
+                <option value="">Select one</option>
+                <option value="community_ambassador">Community Ambassador</option>
+                <option value="content_creator">Content Creator</option>
+                <option value="not_sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="volunteer-field">
+              <label for="volunteer-hours">
+                Roughly how many hours per week can you offer?
+              </label>
+              <input
+                id="volunteer-hours"
+                name="hours_per_week"
+                type="text"
+                inputmode="text"
+                placeholder="e.g. 3–5"
+                required
+              />
+            </div>
+
+            <div class="volunteer-field">
+              <label for="volunteer-about">
+                Tell us a bit about yourself and why you're interested (short answer)
+              </label>
+              <textarea
+                id="volunteer-about"
+                name="about"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <p
+              id="volunteer-error"
+              class="volunteer-form-error"
+              data-volunteer-error
+              hidden
+            ></p>
+
+            <button class="btn btn-primary volunteer-form__submit" type="submit">
+              Join as a Volunteer
+            </button>
+          </form>
+
+          <p
+            class="volunteer-form-success"
+            data-volunteer-success
+            tabindex="-1"
+            role="status"
+            hidden
+          >
+            Thank you — we'll review your application and follow up personally
+            within a few days.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">

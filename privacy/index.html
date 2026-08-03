@@ -6,7 +6,7 @@
     <title>Lumina Companion — Privacy</title>
     <meta
       name="description"
-      content="Lumina Companion is a companion that grows to know your parent through everyday conversation — helping them feel understood, and giving your family greater peace of mind. Now piloting in Ottawa, Canada."
+      content="Your privacy, in plain language — what Lumina collects, who can see it, where it’s stored, and how to reach us with privacy requests."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/config.js" defer></script>
     <script src="../js/nav.js" defer></script>
+    <script src="../js/privacy.js" defer></script>
   </head>
-  <body class="flex min-h-screen flex-col antialiased">
+  <body class="min-h-screen antialiased" style="display: flex; flex-direction: column; min-height: 100vh">
     <header class="site-header">
       <div class="site-container">
         <div class="site-header__bar">
@@ -48,15 +49,217 @@
       </div>
     </header>
 
-    <main class="page-main page-main--stub site-container grow">
-      <div class="page-stub">
-        <h1>Privacy</h1>
-        <p>Shared layout shell is ready — Privacy content lands in Task 1.6.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="../pilot/">Apply for the Pilot Program</a>
-          <a class="btn btn-secondary" href="../volunteer/">Join as a Volunteer</a>
+    <main class="page-main grow">
+      <!-- Hero -->
+      <section class="privacy-hero" aria-labelledby="privacy-hero-heading">
+        <div class="privacy-hero__inner">
+          <p class="privacy-hero__brand">Lumina Companion</p>
+          <h1 id="privacy-hero-heading" class="privacy-hero__headline">
+            Your Privacy, in Plain Language
+          </h1>
+          <p class="privacy-hero__subhead">
+            Lumina handles sensitive information — here's exactly what we
+            collect, how we use it, and what control you have.
+          </p>
         </div>
-      </div>
+      </section>
+
+      <!-- Section 1 — What we collect -->
+      <section class="privacy-section" aria-labelledby="privacy-collect-heading">
+        <div class="privacy-section__inner">
+          <h2 id="privacy-collect-heading" class="privacy-heading">What we collect</h2>
+          <ul class="privacy-list">
+            <li>
+              <strong>Conversations:</strong> We do not intentionally retain voice
+              recordings after processing. Speech is converted to text to power the
+              conversation, and it's that text — not the audio — that we store and
+              use going forward. (Some processing steps may briefly handle audio in
+              order to generate that text, as is standard for voice-based services.)
+            </li>
+            <li>
+              <strong>Wellness data:</strong> Heart rate, SpO2, step count, and sleep
+              data from the Lumina Wearable, and weight from the connected scale
+              (if used).
+            </li>
+            <li>
+              <strong>Photos:</strong> Family photos uploaded through the Caregiver App.
+            </li>
+            <li>
+              <strong>Video calls:</strong> Live video between senior and caregiver.
+              Calls are never recorded.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 2 — Who can see this data -->
+      <section class="privacy-section privacy-section--alt" aria-labelledby="privacy-who-heading">
+        <div class="privacy-section__inner">
+          <h2 id="privacy-who-heading" class="privacy-heading">Who can see this data</h2>
+          <ul class="privacy-list">
+            <li>Your parent (the senior using Lumina)</li>
+            <li>Family members you explicitly authorize through the Caregiver App</li>
+            <li>
+              Our small team, only as needed to operate and improve the service —
+              never for advertising or resale
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 3 — Where your data is stored -->
+      <section class="privacy-section" aria-labelledby="privacy-stored-heading">
+        <div class="privacy-section__inner">
+          <h2 id="privacy-stored-heading" class="privacy-heading">Where your data is stored</h2>
+          <p class="privacy-body">
+            Data is stored securely using Supabase, a managed cloud database
+            provider. We are actively strengthening our data protection
+            infrastructure ahead of pilot onboarding, including access controls that
+            ensure only authorized users and systems can reach your data.
+          </p>
+          <p class="privacy-body">
+            To provide voice and natural language features, processing may securely
+            pass through vetted third-party cloud AI service providers. We ensure
+            all platform providers adhere to strict data safety and privacy
+            standards.
+          </p>
+          <p class="privacy-body">
+            When you submit a form on this website — waitlist signup, Pilot or
+            Volunteer applications, or contact forms — your submission is processed
+            by <strong>Formspree</strong>, a third-party form service. Formspree
+            delivers the message to us by email so we can respond. Formspree’s own
+            privacy policy governs how they handle that data while processing the
+            submission; we do not use form submissions for advertising or resale.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4 — Your control -->
+      <section class="privacy-section privacy-section--alt" aria-labelledby="privacy-control-heading">
+        <div class="privacy-section__inner">
+          <h2 id="privacy-control-heading" class="privacy-heading">Your control</h2>
+          <ul class="privacy-list">
+            <li>You can request deletion of your data at any time</li>
+            <li>You can withdraw consent and stop using Lumina at any time</li>
+            <li>
+              Contact us using the
+              <a href="#contact">form below</a> with any privacy request
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 5 — What we don't do -->
+      <section class="privacy-section" aria-labelledby="privacy-dont-heading">
+        <div class="privacy-section__inner">
+          <h2 id="privacy-dont-heading" class="privacy-heading">What we don't do</h2>
+          <ul class="privacy-list">
+            <li>We do not sell your data to anyone</li>
+            <li>We do not use your data for advertising</li>
+            <li>
+              Lumina is a wellness companion, not a medical device — we do not
+              provide diagnoses or medical advice
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 6 — Consent -->
+      <section class="privacy-section privacy-section--alt" aria-labelledby="privacy-consent-heading">
+        <div class="privacy-section__inner">
+          <h2 id="privacy-consent-heading" class="privacy-heading">Consent</h2>
+          <p class="privacy-body">
+            Setting up Lumina includes a clear consent step covering voice
+            processing, wearable health data, and (if used) video calling, in line
+            with Canadian privacy law (PIPEDA).
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 7 — Contact -->
+      <section class="privacy-contact" id="contact" aria-labelledby="privacy-contact-heading">
+        <div class="privacy-section__inner privacy-section__inner--form">
+          <h2 id="privacy-contact-heading" class="privacy-heading">Contact</h2>
+          <p class="privacy-body privacy-contact__intro">
+            Questions about your privacy or data? Reach out — we respond
+            personally.
+          </p>
+
+          <form class="privacy-form" data-privacy-form novalidate>
+            <input type="hidden" name="form_type" value="privacy" />
+            <input type="hidden" name="_subject" value="[Lumina] Privacy contact" />
+
+            <div class="privacy-honeypot" hidden>
+              <label for="privacy-gotcha">Leave blank</label>
+              <input
+                type="text"
+                id="privacy-gotcha"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="privacy-field">
+              <label for="privacy-name">Name</label>
+              <input
+                id="privacy-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="privacy-field">
+              <label for="privacy-email">Email</label>
+              <input
+                id="privacy-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="privacy-field">
+              <label for="privacy-message">Message</label>
+              <textarea
+                id="privacy-message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <p
+              id="privacy-error"
+              class="privacy-form-error"
+              data-privacy-error
+              hidden
+            ></p>
+
+            <button class="btn btn-primary privacy-form__submit" type="submit">
+              Send
+            </button>
+          </form>
+
+          <p
+            class="privacy-form-success"
+            data-privacy-success
+            tabindex="-1"
+            role="status"
+            hidden
+          >
+            Thank you — we’ll get back to you personally.
+          </p>
+
+          <p class="privacy-operator-note">
+            This service is operated by IvyFeeder Inc. You can also reach us at
+            <a href="mailto:info@ivyfeeder.com">info@ivyfeeder.com</a>.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
