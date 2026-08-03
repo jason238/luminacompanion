@@ -56,6 +56,16 @@ All site forms (Home waitlist, Pilot, Volunteer, About, Privacy) POST to Formspr
 
 Until `FORMSPREE_ENDPOINT` is a real URL, submits show a plain-language error and suggest emailing `info@ivyfeeder.com`.
 
+## Waitlist count (About → Traction)
+
+The About page line “X people on our early-access waitlist” reads from `js/config.js`:
+
+1. Open `js/config.js`.
+2. Change `WAITLIST_COUNT` to the new whole number (e.g. `WAITLIST_COUNT: 32`).
+3. Commit and push — GitHub Pages serves the updated file; no rebuild required.
+
+This is a manual editable config value only. It is **not** wired to Formspree submission totals. The Pilot page keeps static “Limited spots available…” copy and does not use this number.
+
 ## Email policy
 
 | Surface | Address |

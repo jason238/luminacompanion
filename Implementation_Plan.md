@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, **1.3**, **1.4**, **1.5**, **1.6**, and **3.1** complete
-- Next: Task **2.1** (SEO + social meta + sitemap) — or **3.2** if forms are the priority after Formspree endpoint is live
+- Tasks **0.1**, **0.2**, **0.3**, **1.1**, **1.2**, **1.3**, **1.4**, **1.5**, **1.6**, **3.1**, **3.2**, and **3.3** complete
+- Next: Task **2.1** (SEO + social meta + sitemap)
 
 ---
 
@@ -297,12 +297,12 @@ Goal: every form emails Jason; waitlist count editable; no personal gmail in HTM
   **OUT OF SCOPE:** CRM; database; Calendly; autoresponder sequences.
   *Verify: test submit each form → email arrives at Jason’s gmail; page HTML still has no personal gmail; confirmation UI matches v3.*
 
-- [ ] **3.2 — Waitlist count as editable config**
+- [x] **3.2 — Waitlist count as editable config**
   About traction reads `WAITLIST_COUNT` from `js/config.js`; README documents how to bump the number.
   **OUT OF SCOPE:** live Formspree count API; Ottawa spot counter widget.
   *Verify: edit config → number updates; Pilot page still static “Limited spots”.*
 
-- [ ] **3.3 — Contact + compliance sweep**
+- [x] **3.3 — Contact + compliance sweep**
   - Visible contact = `info@ivyfeeder.com` only.
   - Grep: no personal phone, home address, or `jason.ottawa@gmail.com` in committed site files (dashboard-only is fine).
   - Privacy §1 vs OpenAI Whisper/TTS — short `docs/privacy-review-notes.md` if anything drifts.
