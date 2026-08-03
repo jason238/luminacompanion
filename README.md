@@ -24,6 +24,19 @@ npm run build:css
 
 That regenerates `css/styles.css`. Commit the updated CSS with your HTML changes.
 
+## Preview locally
+
+Do **not** open a folder path like `C:\luminacompanion\product\` in the browser — Chrome shows a file list instead of the page. Either:
+
+1. Open the file itself: `product\index.html` (double-click or paste the full file path), or
+2. Run a local server from the repo root:
+
+```bash
+npm run serve
+```
+
+Then visit `http://localhost:4173/product/`.
+
 ## Deploy
 
 ```bash

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder  Lumina Wearable (Colmi ring)</title>
+  <title id="title">Placeholder - Lumina Wearable (Colmi ring)</title>
   <desc id="desc">Replace with real product photo PNG (colmi-ring.png).</desc>
   <rect width="1000" height="1000" fill="#eef2f0"/>
   <circle cx="500" cy="480" r="180" fill="none" stroke="#2a5a4a" stroke-width="36"/>
   <circle cx="500" cy="480" r="110" fill="none" stroke="#c5d0ca" stroke-width="2"/>
   <text x="500" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#1e4337">Lumina Wearable</text>
-  <text x="500" y="810" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#4a5c57">Placeholder  product photo pending</text>
+  <text x="500" y="810" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#4a5c57">Placeholder - product photo pending</text>
   <text x="500" y="855" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" fill="#5a7d6c">assets/images/product/colmi-ring.png</text>
 </svg>
