@@ -124,8 +124,8 @@ Other assets (Hub/App screenshots, ring, vision diagram) land in sibling folders
 - **Pilot photos present:** `assets/images/pilot/{grandma-tuen,grandma-xie,michael}.png`
 - **OG image present:** `assets/images/og/og-default.png` (copy of Michael photo)
 - Note: Pilot/OG PNGs are large (~2–2.7 MB each) — compress in Task **2.3** (do not block Phase 0–1)
-- Tasks **0.1**, **0.2**, **0.3**, and **1.1** complete
-- Next: Task **1.2** (Product) or **1.3** (Pilot) per suggested order
+- Tasks **0.1**, **0.2**, **0.3**, **1.1**, and **1.2** complete
+- Next: Task **1.3** (Pilot Program)
 
 ---
 
@@ -228,7 +228,7 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
   **OUT OF SCOPE:** Formspree live submit; French; About traction counter; image compression.
   *Verify: section order matches v3; phone + desktop layouts OK; waitlist validates empty email.*
 
-- [ ] **1.2 — Product (`/product`)**
+- [x] **1.2 — Product (`/product`)**
   Care Loop → Hub → Wearable → Family App → “More than a chatbot” → Health Scale → Vision/roadmap (distinct) → Closing CTA.
   - Feature blocks stack on phone; image + text reflow (no side-by-side squeeze on narrow screens).
   **OUT OF SCOPE:** interactive demos; app stores.

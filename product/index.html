@@ -6,7 +6,7 @@
     <title>Lumina Companion — Product</title>
     <meta
       name="description"
-      content="Lumina Companion is a companion that grows to know your parent through everyday conversation — helping them feel understood, and giving your family greater peace of mind. Now piloting in Ottawa, Canada."
+      content="The Lumina Care Loop: a voice-first companion at home, a simple wearable for wellness, and an app that keeps family close — working together as one system."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
     <script src="../js/config.js" defer></script>
     <script src="../js/nav.js" defer></script>
   </head>
-  <body class="flex min-h-screen flex-col antialiased">
+  <body class="min-h-screen antialiased" style="display: flex; flex-direction: column; min-height: 100vh">
     <header class="site-header">
       <div class="site-container">
         <div class="site-header__bar">
@@ -48,15 +48,210 @@
       </div>
     </header>
 
-    <main class="page-main page-main--stub site-container grow">
-      <div class="page-stub">
-        <h1>Product</h1>
-        <p>Shared layout shell is ready — Product content lands in Task 1.2.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="../pilot/">Apply for the Pilot Program</a>
-          <a class="btn btn-secondary" href="../volunteer/">Join as a Volunteer</a>
+    <main class="page-main grow">
+      <!-- Hero — Care Loop -->
+      <section class="product-hero" aria-labelledby="product-hero-heading">
+        <div class="product-hero__inner">
+          <p class="product-hero__brand">Lumina Companion</p>
+          <h1 id="product-hero-heading" class="product-hero__headline">
+            The Lumina Care Loop
+          </h1>
+          <p class="product-hero__subhead">
+            A voice-first companion at home, a simple wearable for wellness, and
+            an app that keeps family close — working together as one system.
+          </p>
+          <p class="product-core-label">
+            Core System — ready today, in active pilot in Ottawa.
+          </p>
         </div>
-      </div>
+      </section>
+
+      <!-- Section 1 — Lumina Hub -->
+      <section class="product-feature" aria-labelledby="product-hub-heading">
+        <div class="product-feature__inner">
+          <div class="product-feature__media">
+            <img
+              src="../assets/screenshots/hub-home-redacted.svg"
+              alt="Lumina Hub home screen"
+              width="960"
+              height="720"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-feature__copy">
+            <h2 id="product-hub-heading" class="product-heading">
+              Lumina Hub — the heart of the home
+            </h2>
+            <p class="product-body">
+              A warm, voice-first companion that lives on the kitchen counter or
+              living room table. Your parent simply taps Lumina to talk — natural
+              conversation, gentle reminders, and a friendly presence throughout
+              the day.
+            </p>
+            <ul class="product-bullets">
+              <li>Simple Voice Interaction — tap to talk, no wake words to remember</li>
+              <li>Medication &amp; appointment reminders</li>
+              <li>Photos, Diary, and Memory Book — everyday moments, preserved</li>
+              <li>One-tap Video Call to a caregiver</li>
+              <li>
+                Family SOS Alert — one tap to notify family
+                <span class="product-note">
+                  SOS feature alerts designated family caregivers via the app; it
+                  is not a 911 emergency dispatch replacement.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 — Lumina Wearable -->
+      <section
+        class="product-feature product-feature--alt"
+        aria-labelledby="product-wearable-heading"
+      >
+        <div class="product-feature__inner product-feature__inner--reverse">
+          <div class="product-feature__media product-feature__media--object">
+            <img
+              src="../assets/images/product/colmi-ring.svg"
+              alt="Lumina Wearable ring"
+              width="640"
+              height="640"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-feature__copy">
+            <h2 id="product-wearable-heading" class="product-heading">
+              Lumina Wearable — always with you
+            </h2>
+            <p class="product-body">
+              A lightweight ring worn day and night. It quietly tracks the signals
+              that matter — steps, heart rate, oxygen levels, and sleep — and
+              feeds them into the same companion experience, no separate app to
+              check.
+            </p>
+            <ul class="product-bullets">
+              <li>Activity &amp; step tracking</li>
+              <li>Heart rate &amp; SpO2 monitoring</li>
+              <li>Sleep tracking</li>
+              <li>
+                Unusual patterns may trigger a family notification
+                <span class="product-note">
+                  Lumina is a wellness companion, not a medical device.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 — Lumina Family App -->
+      <section class="product-feature" aria-labelledby="product-app-heading">
+        <div class="product-feature__inner">
+          <div class="product-feature__media">
+            <img
+              src="../assets/screenshots/app-home-redacted.svg"
+              alt="Lumina Family App home screen"
+              width="960"
+              height="720"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-feature__copy">
+            <h2 id="product-app-heading" class="product-heading">
+              Lumina Family App — stay close from anywhere
+            </h2>
+            <p class="product-body">
+              A calm, clear window into your parent's day. No raw data to
+              interpret — just a simple "All is well" view, with the details
+              available when you want them.
+            </p>
+            <ul class="product-bullets">
+              <li>Daily wellness summary, in plain language</li>
+              <li>Medication confirmation status</li>
+              <li>Memory Book — life stories, automatically preserved</li>
+              <li>Two-way messages, photos, and memories</li>
+              <li>7-day activity &amp; vitals trends</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3.5 — More than a chatbot -->
+      <section class="product-positioning" aria-labelledby="product-chatbot-heading">
+        <div class="product-positioning__inner">
+          <h2 id="product-chatbot-heading" class="product-positioning__headline">
+            More than a chatbot
+          </h2>
+          <p class="product-positioning__body">
+            Lumina remembers who your parent is — not just what they said five
+            minutes ago.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4 — Health Scale -->
+      <section class="product-feature" aria-labelledby="product-scale-heading">
+        <div class="product-feature__inner product-feature__inner--reverse">
+          <div class="product-feature__media product-feature__media--object">
+            <img
+              src="../assets/images/product/health-scale.svg"
+              alt="Lumina Health Scale"
+              width="640"
+              height="640"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-feature__copy">
+            <h2 id="product-scale-heading" class="product-heading">
+              Health Scale — part of the core system
+            </h2>
+            <p class="product-body">
+              A simple connected scale rounds out your parent's wellness picture,
+              feeding weight trends into the same private, at-home system — no
+              extra app, no separate login.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 — Vision / roadmap (distinct from Core) -->
+      <section class="product-roadmap" aria-labelledby="product-roadmap-heading">
+        <div class="product-roadmap__inner">
+          <p class="product-roadmap__badge">Roadmap</p>
+          <h2 id="product-roadmap-heading" class="product-heading">
+            What's next for Lumina
+          </h2>
+          <p class="product-body">
+            Our long-term vision is a fully connected, privacy-first smart home
+            for aging in place — presence sensing, ambient lighting, and more,
+            all working locally without depending on third-party clouds. We're
+            building toward that future deliberately, one reliable piece at a
+            time.
+          </p>
+          <figure class="product-roadmap__diagram">
+            <img
+              src="../assets/images/diagrams/vision-ecosystem.svg"
+              alt="Vision ecosystem: Lumina Hub, AI Platform, Wearable, Smart Living Devices, and Family App"
+              width="1200"
+              height="720"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Closing CTA -->
+      <section class="product-closing" aria-labelledby="product-closing-heading">
+        <div class="product-closing__inner">
+          <h2 id="product-closing-heading" class="product-heading">
+            This is what your family can experience today.
+          </h2>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="../pilot/">Apply for the Pilot Program</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
