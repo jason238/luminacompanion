@@ -356,14 +356,14 @@
     height: 100%;
     max-width: none;
     object-fit: cover;
-    /* Grandma Tuen — bias so face isn't clipped on the right */
-    object-position: 58% 24%;
+    /* Michael + Hub — keep face and tablet in frame */
+    object-position: 48% 22%;
     animation: home-hero-ken 20s ease-out forwards;
   }
 
   @media (min-width: 768px) {
     .home-hero__media img {
-      object-position: 55% 28%;
+      object-position: 45% 26%;
     }
   }
 
