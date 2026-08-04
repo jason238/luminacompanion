@@ -109,6 +109,6 @@ How-it-works step icons from [Lucide](https://lucide.dev) (ISC license):
 
 | File | Lucide name | Home step |
 |---|---|---|
-| `step-tap-to-talk.svg` | `tablet-smartphone` | Tap to talk |
-| `step-keeps-track.svg` | `activity` | Lumina quietly keeps track |
-| `step-family-close.svg` | `heart-handshake` | Family stays close |
+| `step-tap-to-talk.svg` | `message-circle` | Natural Interactions |
+| `step-keeps-track.svg` | `brain` | Growing Understanding |
+| `step-family-close.svg` | `users` | Stronger Family Connections |

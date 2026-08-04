@@ -452,7 +452,7 @@
     max-width: 18ch;
   }
 
-  /* Positioning — what Lumina is */
+  /* Positioning — what Lumina is; one line on laptop, wrap only when needed */
   .home-hero__subhead {
     margin: 0 0 1.15rem;
     font-family: var(--font-display);
@@ -461,7 +461,14 @@
     letter-spacing: -0.015em;
     line-height: 1.35;
     color: #f3efe6;
-    max-width: 28ch;
+    max-width: 36rem;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 768px) {
+    .home-hero__subhead {
+      white-space: nowrap;
+    }
   }
 
   /* Value — one concise paragraph */
