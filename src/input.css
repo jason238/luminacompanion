@@ -1319,8 +1319,42 @@
     max-width: 34rem;
   }
 
+  .pilot-section__inner--wide {
+    max-width: 56rem;
+  }
+
   .pilot-section__inner--form {
     max-width: 36rem;
+  }
+
+  .pilot-mvp {
+    padding-block: 3.25rem 3.5rem;
+    background: color-mix(in oklab, var(--color-surface) 78%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .pilot-mvp__figure {
+    margin: 0;
+  }
+
+  .pilot-mvp__figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 1.25rem;
+    border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+    background: var(--color-surface);
+  }
+
+  .pilot-mvp__caption {
+    margin: 1.15rem 0 0;
+    max-width: 40rem;
+    color: var(--color-ink-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-inline: auto;
   }
 
   .pilot-heading {
