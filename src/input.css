@@ -1922,8 +1922,8 @@
     animation: home-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  .about-hero__brand {
-    margin: 0 0 1rem;
+  .about-hero__headline {
+    margin: 0 0 1.25rem;
     font-family: var(--font-display);
     font-weight: 650;
     font-size: clamp(1.75rem, 4vw, 2.35rem);
@@ -1932,44 +1932,20 @@
     line-height: 1.15;
   }
 
-  .about-hero__headline {
+  .about-hero__lede {
     margin: 0 0 1rem;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1.45rem, 3.2vw, 1.85rem);
-    letter-spacing: -0.015em;
+    max-width: 40ch;
     color: var(--color-ink);
-    line-height: 1.25;
-    max-width: 22ch;
+    font-size: 1.15rem;
+    line-height: 1.65;
   }
 
   .about-hero__subhead {
     margin: 0;
-    max-width: 36ch;
+    max-width: 42ch;
     color: var(--color-ink-muted);
     font-size: 1.1rem;
     line-height: 1.65;
-  }
-
-  .about-name {
-    padding-block: 3.5rem 3.75rem;
-  }
-
-  .about-name__inner {
-    width: min(32rem, calc(100% - 2.5rem));
-    margin-inline: auto;
-  }
-
-  .about-name__quote {
-    margin: 0;
-    color: var(--color-moss);
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.05rem;
-    font-style: italic;
-    line-height: 1.7;
-    letter-spacing: 0.01em;
-    text-align: center;
   }
 
   .about-section {
