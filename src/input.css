@@ -1904,16 +1904,15 @@
   /* ---- About page ---- */
   .about-hero {
     position: relative;
-    padding-block: 4rem 3.5rem;
+    padding-block: 3.5rem 2.75rem;
     background:
-      radial-gradient(ellipse 90% 70% at 15% 0%, rgba(90, 125, 108, 0.22), transparent 55%),
-      radial-gradient(ellipse 70% 50% at 100% 20%, rgba(154, 123, 82, 0.12), transparent 50%),
+      radial-gradient(ellipse 90% 70% at 15% 0%, rgba(90, 125, 108, 0.2), transparent 60%),
       linear-gradient(
         165deg,
-        color-mix(in oklab, var(--color-surface) 88%, transparent) 0%,
-        color-mix(in oklab, var(--color-canvas-deep) 55%, var(--color-surface)) 100%
+        color-mix(in oklab, var(--color-pine) 94%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
       );
-    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+    color: #eef4f1;
   }
 
   .about-hero__inner {
@@ -1928,14 +1927,14 @@
     font-weight: 650;
     font-size: clamp(1.75rem, 4vw, 2.35rem);
     letter-spacing: -0.02em;
-    color: var(--color-pine-dark);
+    color: #f7faf8;
     line-height: 1.15;
   }
 
   .about-hero__lede {
     margin: 0 0 1rem;
     max-width: 40ch;
-    color: var(--color-ink);
+    color: #f3efe6;
     font-size: 1.15rem;
     line-height: 1.65;
   }
@@ -1943,7 +1942,7 @@
   .about-hero__subhead {
     margin: 0;
     max-width: 42ch;
-    color: var(--color-ink-muted);
+    color: rgba(247, 250, 248, 0.9);
     font-size: 1.1rem;
     line-height: 1.65;
   }
@@ -2039,45 +2038,11 @@
     margin-bottom: 1.5rem;
   }
 
-  .about-vision__legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .about-vision__legend-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-ink-muted);
-  }
-
-  .about-vision__legend-item::before {
-    content: "";
-    width: 0.85rem;
-    height: 0.85rem;
-    border-radius: 0.25rem;
-    border: 2px solid var(--color-pine);
-    background: color-mix(in oklab, var(--color-moss) 22%, var(--color-surface));
-  }
-
-  .about-vision__legend-item--roadmap::before {
-    border-color: var(--color-warm);
-    border-style: dashed;
-    background: var(--color-surface);
-  }
-
   .about-vision__diagram {
     margin: 0;
     max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-radius: 0.35rem;
+    overflow: hidden;
+    border-radius: 1.25rem;
     border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
     background: var(--color-surface);
   }
@@ -2088,6 +2053,7 @@
     min-width: min(100%, 28rem);
     height: auto;
     max-width: 100%;
+    border-radius: 1.25rem;
   }
 
   .about-milestones {
