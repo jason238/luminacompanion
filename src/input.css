@@ -1433,9 +1433,10 @@
     border-block: none;
   }
 
-  .pilot-mvp__heading {
+  .pilot-mvp .pilot-heading.pilot-mvp__heading {
     text-align: center;
     margin-inline: auto;
+    margin-bottom: 1.15rem;
     max-width: none;
     white-space: nowrap;
     font-size: clamp(1.05rem, 3.6vw, 2.15rem);
