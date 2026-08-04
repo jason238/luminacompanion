@@ -10,10 +10,13 @@
  * endpoint URL below. One endpoint + form_type/_subject per form is the
  * default; separate endpoints are optional.
  *
- * CONTACT_EMAIL — public contact on pages only (never a personal address).
+ * CONTACT_EMAIL — public contact email on pages.
+ * CONTACT_PHONE — public Ottawa phone (display + tel: link).
  */
 window.LuminaConfig = {
   WAITLIST_COUNT: 24,
   FORMSPREE_ENDPOINT: "https://formspree.io/f/xeeyynqn",
   CONTACT_EMAIL: "info@ivyfeeder.com",
+  CONTACT_PHONE: "(613) 882-6872",
+  CONTACT_PHONE_TEL: "+16138826872",
 };
