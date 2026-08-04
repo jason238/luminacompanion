@@ -2686,4 +2686,12 @@
     font-size: 0.875rem;
     line-height: 1.65;
   }
+
+  .site-footer__disclaimer-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--color-ink-muted);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
 }
