@@ -1422,8 +1422,15 @@
 
   .pilot-mvp {
     padding-block: 3.25rem 3.5rem;
-    background: color-mix(in oklab, var(--color-surface) 78%, transparent);
-    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(90, 125, 108, 0.22), transparent 60%),
+      linear-gradient(
+        165deg,
+        color-mix(in oklab, var(--color-pine) 88%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
+      );
+    color: #eef4f1;
+    border-block: none;
   }
 
   .pilot-mvp__heading {
@@ -1432,6 +1439,7 @@
     max-width: none;
     white-space: nowrap;
     font-size: clamp(1.05rem, 3.6vw, 2.15rem);
+    color: #f7faf8;
   }
 
   .pilot-mvp__figure {
@@ -1444,14 +1452,15 @@
     height: auto;
     max-width: 100%;
     border-radius: 1.25rem;
-    border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
-    background: var(--color-surface);
+    border: 1px solid color-mix(in oklab, #f7faf8 18%, transparent);
+    background: #ffffff;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
   }
 
   .pilot-mvp__caption {
     margin: 1.15rem 0 0;
     max-width: 40rem;
-    color: var(--color-ink-muted);
+    color: color-mix(in oklab, #eef4f1 88%, transparent);
     font-size: 1.05rem;
     line-height: 1.6;
     text-align: center;
