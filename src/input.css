@@ -1,7 +1,7 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens — calm forest / mist (not purple-gradient, not cream+terracotta)
+   Design tokens â€” calm forest / mist (not purple-gradient, not cream+terracotta)
    --------------------------------------------------------------------------- */
 @theme {
   --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
@@ -366,8 +366,8 @@
   .home-hero {
     position: relative;
     /*
-      Shorter than full viewport so the landscape Pilot photo can “zoom out”
-      (less aggressive crop) — more of Michael’s face + Hub tablet stay visible.
+      Shorter than full viewport so the landscape Pilot photo can â€œzoom outâ€
+      (less aggressive crop) â€” more of Michaelâ€™s face + Hub tablet stay visible.
     */
     min-height: clamp(26rem, 62vh, 36rem);
     display: flex;
@@ -452,7 +452,7 @@
     }
   }
 
-  /* Brand mark — present, not louder than the hook */
+  /* Brand mark â€” present, not louder than the hook */
   .home-hero__logo {
     margin: 0 0 0.35rem;
     font-family: var(--font-display);
@@ -463,7 +463,7 @@
     color: #f7faf8;
   }
 
-  /* Hook — wide + slightly smaller so it stays in the bottom band */
+  /* Hook â€” wide + slightly smaller so it stays in the bottom band */
   .home-hero__headline {
     margin: 0 0 0.4rem;
     font-family: var(--font-display);
@@ -508,7 +508,7 @@
     }
   }
 
-  /* Value — wide, short vertical footprint */
+  /* Value â€” wide, short vertical footprint */
   .home-hero__support {
     margin: 0;
     max-width: 54rem;
@@ -596,7 +596,7 @@
     line-height: 1.75;
   }
 
-  /* ---- Problem — same left rail as understanding / how-it-works ---- */
+  /* ---- Problem â€” same left rail as understanding / how-it-works ---- */
   .home-problem {
     padding-block: 2.75rem 1.15rem;
   }
@@ -1067,7 +1067,7 @@
 
   .product-feature__media {
     margin: 0;
-    border-radius: 0.35rem;
+    border-radius: 1.25rem;
     overflow: hidden;
     background: color-mix(in oklab, var(--color-surface) 80%, var(--color-canvas-deep));
     border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
@@ -1080,38 +1080,40 @@
     max-width: 100%;
   }
 
+  /* Ring / object shots â€” frame matches source aspect (1436Ã—1075) */
   .product-feature__media--object {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.75rem;
+    aspect-ratio: 1436 / 1075;
     background:
       radial-gradient(ellipse 70% 60% at 50% 40%, rgba(90, 125, 108, 0.12), transparent 70%),
       var(--color-surface);
   }
 
   .product-feature__media--object img {
-    width: min(100%, 18rem);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
+  /* Family App screenshot â€” tall phone frame matches source (1080Ã—2312) */
   .product-feature__media--phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem 1.5rem;
+    width: min(100%, 16.5rem);
+    aspect-ratio: 1080 / 2312;
     background:
       radial-gradient(ellipse 70% 60% at 50% 40%, rgba(90, 125, 108, 0.1), transparent 70%),
       var(--color-surface);
   }
 
   .product-feature__media--phone img {
-    width: min(100%, 14rem);
-    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
   }
 
   @media (min-width: 900px) {
-    .product-feature__media--phone img {
-      width: min(100%, 16rem);
+    .product-feature__media--phone {
+      width: min(100%, 18rem);
     }
   }
 
@@ -1216,7 +1218,7 @@
 
   .product-gallery__item {
     margin: 0;
-    border-radius: 0.35rem;
+    border-radius: 1.25rem;
     overflow: hidden;
     background: color-mix(in oklab, var(--color-surface) 80%, var(--color-canvas-deep));
     border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
@@ -1746,8 +1748,8 @@
     }
   }
 
-  /* ---- Volunteer page ---- */
-  .volunteer-hero {
+  /* ---- Contribute page ---- */
+  .contribute-hero {
     padding-block: 3.5rem 2.75rem;
     background:
       radial-gradient(ellipse 90% 70% at 85% 0%, rgba(154, 123, 82, 0.16), transparent 55%),
@@ -1759,14 +1761,14 @@
     color: #eef4f1;
   }
 
-  .volunteer-hero__inner {
+  .contribute-hero__inner {
     width: min(70rem, calc(100% - 2rem));
     margin-inline: auto;
     max-width: 40rem;
     animation: home-fade-up 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  .volunteer-hero__brand {
+  .contribute-hero__brand {
     margin: 0 0 0.85rem;
     font-family: var(--font-display);
     font-weight: 650;
@@ -1776,7 +1778,7 @@
     color: #f7faf8;
   }
 
-  .volunteer-hero__headline {
+  .contribute-hero__headline {
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 650;
@@ -1786,47 +1788,51 @@
     color: #f3efe6;
   }
 
-  .volunteer-hero__subhead {
+  .contribute-hero__subhead {
     margin: 0;
     color: rgba(247, 250, 248, 0.9);
     font-size: 1.08rem;
     line-height: 1.65;
   }
 
-  .volunteer-hero .btn-row {
+  .contribute-hero__subhead + .contribute-hero__subhead {
+    margin-top: 1rem;
+  }
+
+  .contribute-hero .btn-row {
     margin-top: 1.5rem;
   }
 
-  .volunteer-section {
+  .contribute-section {
     padding-block: 3.25rem;
   }
 
   @media (min-width: 768px) {
-    .volunteer-section {
+    .contribute-section {
       padding-block: 4rem;
     }
   }
 
-  .volunteer-section--alt {
+  .contribute-section--alt {
     background: color-mix(in oklab, var(--color-surface) 72%, transparent);
     border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
   }
 
-  .volunteer-section__inner {
+  .contribute-section__inner {
     width: min(70rem, calc(100% - 2rem));
     margin-inline: auto;
     max-width: 40rem;
   }
 
-  .volunteer-section__inner--wide {
+  .contribute-section__inner--wide {
     max-width: 48rem;
   }
 
-  .volunteer-section__inner--form {
+  .contribute-section__inner--form {
     max-width: 36rem;
   }
 
-  .volunteer-heading {
+  .contribute-heading {
     margin: 0 0 1.15rem;
     font-family: var(--font-display);
     font-weight: 650;
@@ -1836,14 +1842,14 @@
     color: var(--color-pine-dark);
   }
 
-  .volunteer-body {
+  .contribute-body {
     margin: 0;
     color: var(--color-ink-muted);
     font-size: 1.05rem;
     line-height: 1.7;
   }
 
-  .volunteer-list {
+  .contribute-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1851,7 +1857,7 @@
     gap: 0.95rem;
   }
 
-  .volunteer-list li {
+  .contribute-list li {
     position: relative;
     padding-left: 1.25rem;
     color: var(--color-ink-muted);
@@ -1859,7 +1865,7 @@
     line-height: 1.6;
   }
 
-  .volunteer-list li::before {
+  .contribute-list li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -1870,29 +1876,29 @@
     background: var(--color-moss);
   }
 
-  .volunteer-roles {
+  .contribute-roles {
     display: grid;
     gap: 2.25rem;
   }
 
   @media (min-width: 768px) {
-    .volunteer-roles {
+    .contribute-roles {
       gap: 2.75rem;
     }
   }
 
-  .volunteer-role {
+  .contribute-role {
     padding: 0;
     border: 0;
     background: transparent;
   }
 
-  .volunteer-role + .volunteer-role {
+  .contribute-role + .contribute-role {
     padding-top: 2.25rem;
     border-top: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
   }
 
-  .volunteer-role__title {
+  .contribute-role__title {
     margin: 0 0 0.75rem;
     font-family: var(--font-display);
     font-weight: 650;
@@ -1902,22 +1908,22 @@
     color: var(--color-pine-dark);
   }
 
-  .volunteer-role .volunteer-body {
+  .contribute-role .contribute-body {
     margin-bottom: 1.1rem;
   }
 
-  .volunteer-affiliate-note {
+  .contribute-affiliate-note {
     margin-top: 1.5rem;
     padding-top: 1.35rem;
     border-top: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
   }
 
-  .volunteer-affiliate-note strong {
+  .contribute-affiliate-note strong {
     color: var(--color-ink);
     font-weight: 700;
   }
 
-  .volunteer-apply {
+  .contribute-apply {
     padding-block: 3.5rem 4.5rem;
     background:
       radial-gradient(ellipse 80% 70% at 50% 0%, rgba(90, 125, 108, 0.14), transparent 65%),
@@ -1925,31 +1931,31 @@
     border-top: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
   }
 
-  .volunteer-form {
+  .contribute-form {
     position: relative;
     display: grid;
     gap: 1.15rem;
   }
 
-  .volunteer-apply .volunteer-heading {
+  .contribute-apply .contribute-heading {
     margin-bottom: 1.75rem;
   }
 
-  .volunteer-field {
+  .contribute-field {
     display: grid;
     gap: 0.4rem;
   }
 
-  .volunteer-field label {
+  .contribute-field label {
     color: var(--color-ink);
     font-size: 0.98rem;
     font-weight: 700;
     line-height: 1.4;
   }
 
-  .volunteer-field input,
-  .volunteer-field select,
-  .volunteer-field textarea {
+  .contribute-field input,
+  .contribute-field select,
+  .contribute-field textarea {
     width: 100%;
     min-height: 3rem;
     padding: 0.75rem 1rem;
@@ -1962,12 +1968,12 @@
     line-height: 1.45;
   }
 
-  .volunteer-field textarea {
+  .contribute-field textarea {
     min-height: 7.5rem;
     resize: vertical;
   }
 
-  .volunteer-field select {
+  .contribute-field select {
     appearance: none;
     background-image:
       linear-gradient(45deg, transparent 50%, var(--color-ink-muted) 50%),
@@ -1980,45 +1986,45 @@
     padding-right: 2.5rem;
   }
 
-  .volunteer-field input:focus,
-  .volunteer-field select:focus,
-  .volunteer-field textarea:focus {
+  .contribute-field input:focus,
+  .contribute-field select:focus,
+  .contribute-field textarea:focus {
     border-color: var(--color-pine);
     outline: none;
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-moss) 28%, transparent);
   }
 
-  .volunteer-field input[aria-invalid="true"],
-  .volunteer-field select[aria-invalid="true"],
-  .volunteer-field textarea[aria-invalid="true"] {
+  .contribute-field input[aria-invalid="true"],
+  .contribute-field select[aria-invalid="true"],
+  .contribute-field textarea[aria-invalid="true"] {
     border-color: #8b3a3a;
   }
 
-  .volunteer-form__submit {
+  .contribute-form__submit {
     width: 100%;
     margin-top: 0.35rem;
   }
 
   @media (min-width: 640px) {
-    .volunteer-form__submit {
+    .contribute-form__submit {
       width: auto;
       justify-self: start;
     }
   }
 
-  .volunteer-form-error,
-  .volunteer-form-success {
+  .contribute-form-error,
+  .contribute-form-success {
     margin: 0;
     font-size: 1rem;
     line-height: 1.55;
   }
 
-  .volunteer-form-error {
+  .contribute-form-error {
     color: #8b3a3a;
     font-weight: 700;
   }
 
-  .volunteer-form-success {
+  .contribute-form-success {
     margin-top: 0.5rem;
     padding: 1.25rem 0;
     color: var(--color-pine-dark);
@@ -2029,7 +2035,7 @@
     line-height: 1.4;
   }
 
-  .volunteer-honeypot {
+  .contribute-honeypot {
     position: absolute !important;
     left: -10000px !important;
     top: auto !important;
@@ -2041,7 +2047,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .volunteer-hero__inner {
+    .contribute-hero__inner {
       animation: none;
     }
   }

@@ -1,13 +1,13 @@
 /**
- * Volunteer application form — validates fields, then POSTs to Formspree via LuminaForms.
+ * Contributor application form — validates fields, then POSTs to Formspree via LuminaForms.
  */
 (function () {
-  function initVolunteerForm() {
-    var form = document.querySelector("[data-volunteer-form]");
+  function initContributeForm() {
+    var form = document.querySelector("[data-contribute-form]");
     if (!form) return;
 
-    var errorEl = form.querySelector("[data-volunteer-error]");
-    var successEl = document.querySelector("[data-volunteer-success]");
+    var errorEl = form.querySelector("[data-contribute-error]");
+    var successEl = document.querySelector("[data-contribute-success]");
     if (!errorEl) return;
 
     var fields = form.querySelectorAll("input, select, textarea");
@@ -39,11 +39,11 @@
       event.preventDefault();
       clearError();
 
-      var name = form.querySelector("#volunteer-name");
-      var email = form.querySelector("#volunteer-email");
-      var role = form.querySelector("#volunteer-role");
-      var hours = form.querySelector("#volunteer-hours");
-      var about = form.querySelector("#volunteer-about");
+      var name = form.querySelector("#contribute-name");
+      var email = form.querySelector("#contribute-email");
+      var role = form.querySelector("#contribute-role");
+      var hours = form.querySelector("#contribute-hours");
+      var about = form.querySelector("#contribute-about");
 
       if (!name || !(name.value || "").trim()) {
         showError("Please enter your name.", name);
@@ -66,7 +66,10 @@
       }
 
       if (!hours || !(hours.value || "").trim()) {
-        showError("Please tell us roughly how many hours per week you can offer.", hours);
+        showError(
+          "Please tell us roughly how many hours per week you can contribute.",
+          hours
+        );
         return;
       }
 
@@ -104,8 +107,8 @@
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initVolunteerForm);
+    document.addEventListener("DOMContentLoaded", initContributeForm);
   } else {
-    initVolunteerForm();
+    initContributeForm();
   }
 })();

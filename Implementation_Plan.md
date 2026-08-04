@@ -138,8 +138,8 @@ luminacompanion/
 │   └── index.html             # `/product`
 ├── pilot/
 │   └── index.html             # `/pilot`
-├── volunteer/
-│   └── index.html             # `/volunteer`
+├── contribute/
+│   └── index.html             # `/contribute`
 ├── about/
 │   └── index.html             # `/about`
 ├── privacy/
@@ -221,7 +221,7 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
 
 - [x] **1.1 — Home (`/`)**
   Hero → Growing understanding → Problem → How it works → **Real families (3 Pilot photos)** → Pilot progress → Waitlist capture → Footer CTA row.
-  - CTAs → `/pilot` and `/volunteer`.
+  - CTAs → `/pilot` and `/contribute`.
   - Waitlist form UI (Formspree in 3.1).
   - Use Pilot PNGs: `grandma-tuen.png`, `grandma-xie.png`, `michael.png` (captions per v3).
   - Real families: 1 column on phone → 3 columns on desktop (or equivalent readable stack).
@@ -240,8 +240,8 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
   **OUT OF SCOPE:** Formspree POST (3.1); Calendly.
   *Verify: Ottawa-only clear; all fields present; confirmation copy matches v3; form usable at ~375px.*
 
-- [x] **1.4 — Volunteer (`/volunteer`)**
-  Full Volunteer page + application form UI.
+- [x] **1.4 — Contribute (`/contribute`)**
+  Full Contribute page + application form UI.
   - Roles stack cleanly on phone.
   **OUT OF SCOPE:** Affiliate program page; Formspree POST.
   *Verify: both roles; form fields match v3; phone + desktop OK.*

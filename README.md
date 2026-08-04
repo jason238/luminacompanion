@@ -47,12 +47,12 @@ GitHub Pages serves the committed files. Keep `CNAME` as `www.luminacompanion.ca
 
 ## Forms (Formspree)
 
-All site forms (Home waitlist, Pilot, Volunteer, About, Privacy) POST to Formspree via `js/forms.js`.
+All site forms (Home waitlist, Pilot, Contribute, About, Privacy) POST to Formspree via `js/forms.js`.
 
 1. Create form(s) at [formspree.io](https://formspree.io) for luminacompanion.ca.
 2. Set the Formspree notification recipient in the dashboard to your inbox (not in HTML).
 3. Paste the public endpoint into `js/config.js` → `FORMSPREE_ENDPOINT` (replace `PLACEHOLDER`).
-4. Confirm each form type in Formspree email subjects: `[Lumina] Waitlist signup`, `[Lumina] Pilot application`, `[Lumina] Volunteer application`, `[Lumina] About / investor inquiry`, `[Lumina] Privacy contact`.
+4. Confirm each form type in Formspree email subjects: `[Lumina] Waitlist signup`, `[Lumina] Pilot application`, `[Lumina] Contributor application`, `[Lumina] About / investor inquiry`, `[Lumina] Privacy contact`.
 
 Until `FORMSPREE_ENDPOINT` is a real URL, submits show a plain-language error and suggest emailing `info@ivyfeeder.com`.
 
