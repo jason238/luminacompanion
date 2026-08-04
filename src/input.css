@@ -365,13 +365,21 @@
   /* ---- Home hero (full-bleed) ---- */
   .home-hero {
     position: relative;
-    /* Fill the first viewport below the sticky header */
-    min-height: calc(100vh - 4.25rem);
-    min-height: calc(100svh - 4.25rem);
+    /*
+      Shorter than full viewport so the landscape Pilot photo can “zoom out”
+      (less aggressive crop) — more of Michael’s face + Hub tablet stay visible.
+    */
+    min-height: clamp(26rem, 62vh, 36rem);
     display: flex;
     align-items: flex-end;
     overflow: hidden;
     color: #f4f7f5;
+  }
+
+  @media (min-width: 768px) {
+    .home-hero {
+      min-height: clamp(30rem, 64vh, 40rem);
+    }
   }
 
   .home-hero__media {
@@ -385,14 +393,14 @@
     height: 100%;
     max-width: none;
     object-fit: cover;
-    /* Michael + Hub — keep face and tablet in frame */
-    object-position: 48% 22%;
-    animation: home-hero-ken 20s ease-out forwards;
+    /* Center on face + tablet; no ken-burns zoom-in */
+    object-position: 52% 42%;
+    transform: none;
   }
 
   @media (min-width: 768px) {
     .home-hero__media img {
-      object-position: 45% 26%;
+      object-position: 48% 46%;
     }
   }
 
@@ -400,68 +408,93 @@
     position: absolute;
     inset: 0;
     z-index: 1;
+    /* Keep face/tablet clear; darken only the bottom copy band */
     background:
       linear-gradient(
         180deg,
-        rgba(15, 32, 28, 0.2) 0%,
-        rgba(15, 32, 28, 0.35) 40%,
-        rgba(15, 32, 28, 0.82) 100%
+        transparent 0%,
+        transparent 40%,
+        rgba(15, 32, 28, 0.22) 62%,
+        rgba(15, 32, 28, 0.72) 82%,
+        rgba(15, 32, 28, 0.9) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(15, 32, 28, 0.58) 0%,
-        rgba(15, 32, 28, 0.22) 55%,
-        transparent 100%
+        rgba(15, 32, 28, 0.18) 0%,
+        transparent 45%
       );
   }
 
   .home-hero__content {
     position: relative;
     z-index: 2;
-    width: min(70rem, calc(100% - 2rem));
+    width: min(76rem, calc(100% - 2rem));
     margin-inline: auto;
-    padding-block: 3rem 3.5rem;
+    margin-top: auto;
+    /* Compact + low so copy sits under the face */
+    padding: 0.75rem 0 1.35rem;
     animation: home-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
+  @media (min-width: 768px) {
+    .home-hero__content {
+      padding: 0.5rem 0 1.75rem;
+    }
+  }
+
   .home-hero__copy {
-    max-width: 40rem;
+    max-width: 54rem;
+  }
+
+  @media (min-width: 768px) {
+    .home-hero__copy {
+      max-width: min(58rem, 88%);
+    }
   }
 
   /* Brand mark — present, not louder than the hook */
   .home-hero__logo {
-    margin: 0 0 1rem;
+    margin: 0 0 0.35rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.15;
     color: #f7faf8;
   }
 
-  /* Hook — primary differentiator, largest type */
+  /* Hook — wide + slightly smaller so it stays in the bottom band */
   .home-hero__headline {
-    margin: 0 0 1rem;
+    margin: 0 0 0.4rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(2rem, 5.2vw, 3.15rem);
+    font-size: clamp(1.55rem, 3.2vw, 2.25rem);
     letter-spacing: -0.03em;
     line-height: 1.12;
     color: #f7faf8;
-    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.25);
-    max-width: 18ch;
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+    max-width: 48rem;
+    text-wrap: balance;
   }
 
-  /* Positioning — what Lumina is; one line on laptop, wrap only when needed */
+  @media (min-width: 768px) {
+    .home-hero__headline {
+      max-width: none;
+      white-space: nowrap;
+      font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+    }
+  }
+
+  /* Positioning */
   .home-hero__subhead {
-    margin: 0 0 1.15rem;
+    margin: 0 0 0.5rem;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
     letter-spacing: -0.015em;
-    line-height: 1.35;
+    line-height: 1.3;
     color: #f3efe6;
-    max-width: 36rem;
+    max-width: 52rem;
     text-wrap: pretty;
   }
 
@@ -471,13 +504,19 @@
     }
   }
 
-  /* Value — one concise paragraph */
+  /* Value — wide, short vertical footprint */
   .home-hero__support {
     margin: 0;
-    max-width: 36rem;
-    color: rgba(247, 250, 248, 0.9);
-    font-size: 1.05rem;
-    line-height: 1.7;
+    max-width: 54rem;
+    color: rgba(247, 250, 248, 0.94);
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 768px) {
+    .home-hero__support {
+      max-width: 56rem;
+    }
   }
 
   .home-hero .btn-row {
@@ -516,13 +555,21 @@
 
   .home-understanding .home-heading {
     color: #f7faf8;
-    max-width: 16ch;
+    max-width: 22rem;
     font-size: clamp(1.85rem, 4.2vw, 2.85rem);
     margin-bottom: 1.75rem;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 768px) {
+    .home-understanding .home-heading {
+      max-width: none;
+      white-space: nowrap;
+    }
   }
 
   .home-understanding__body {
-    max-width: 40rem;
+    max-width: 54rem;
   }
 
   .home-understanding__lead {
@@ -540,16 +587,42 @@
   }
 
   .home-understanding .home-body {
-    max-width: 40rem;
+    max-width: 54rem;
     color: color-mix(in oklab, #eef4f1 86%, transparent);
     font-size: 1.08rem;
     line-height: 1.75;
   }
 
-  /* ---- Problem ---- */
+  /* ---- Problem — same left rail as understanding / how-it-works ---- */
+  .home-problem {
+    padding-block: 2.75rem 1.15rem;
+  }
+
+  @media (min-width: 768px) {
+    .home-problem {
+      padding-block: 3.5rem 1.35rem;
+    }
+  }
+
+  .home-problem + .home-section {
+    padding-top: 1.35rem;
+  }
+
+  @media (min-width: 768px) {
+    .home-problem + .home-section {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .home-problem__copy {
+    max-width: 54rem;
+    display: grid;
+    gap: 1rem;
+  }
+
   .home-problem .home-body {
     font-size: 1.15rem;
-    max-width: 38rem;
+    max-width: none;
   }
 
   .home-problem em {
@@ -625,6 +698,17 @@
   .home-families {
     background: color-mix(in oklab, var(--color-surface) 70%, transparent);
     border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-families .home-lede {
+    max-width: 56rem;
+  }
+
+  @media (min-width: 900px) {
+    .home-families .home-lede {
+      max-width: none;
+      white-space: nowrap;
+    }
   }
 
   .home-families__grid {
@@ -2498,30 +2582,99 @@
   }
 
   .site-footer__meta {
-    margin: 0 0 1rem;
+    margin: 0 0 1.1rem;
     color: var(--color-ink-muted);
     font-size: 0.95rem;
     line-height: 1.6;
   }
 
-  .site-footer__links {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.5rem;
+  .site-footer__meta-sep {
+    display: none;
   }
 
-  .site-footer__links a {
+  @media (min-width: 640px) {
+    .site-footer__meta-break {
+      display: none;
+    }
+
+    .site-footer__meta-sep {
+      display: inline;
+    }
+  }
+
+  .site-footer__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin: 0 0 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .site-footer__row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.75rem;
+    }
+  }
+
+  .site-footer__privacy {
+    color: var(--color-ink-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .site-footer__privacy:hover {
+    color: var(--color-pine-dark);
+  }
+
+  .site-footer__contact {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    color: var(--color-ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .site-footer__contact-label {
+    color: var(--color-ink-muted);
+    font-weight: 700;
+  }
+
+  .site-footer__contact-link {
     display: inline-flex;
     align-items: center;
-    min-height: 3rem;
-    padding-inline: 0.15rem;
+    gap: 0.4rem;
     color: var(--color-pine-dark);
     font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .site-footer__contact-link:hover {
+    color: var(--color-pine);
+  }
+
+  .site-footer__icon {
+    display: block;
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  .site-footer__contact-sep {
+    color: var(--color-ink-muted);
   }
 
   .site-footer__disclaimer {
     margin: 0;
-    max-width: 62ch;
+    max-width: min(72rem, 100%);
     color: var(--color-ink-muted);
     font-size: 0.875rem;
     line-height: 1.65;
