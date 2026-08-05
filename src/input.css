@@ -2055,15 +2055,45 @@
   /* ---- About page ---- */
   .about-hero {
     position: relative;
-    padding-block: 3.5rem 2.75rem;
-    background:
-      radial-gradient(ellipse 90% 70% at 15% 0%, rgba(90, 125, 108, 0.2), transparent 60%),
-      linear-gradient(
-        165deg,
-        color-mix(in oklab, var(--color-pine) 94%, #0f201c) 0%,
-        var(--color-pine-dark) 100%
-      );
+    min-height: min(72vh, 36rem);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
     color: #eef4f1;
+  }
+
+  .about-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .about-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    animation: home-hero-ken 14s ease-out both;
+  }
+
+  .about-hero__veil {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15, 32, 28, 0.28) 0%,
+        rgba(15, 32, 28, 0.48) 45%,
+        rgba(15, 32, 28, 0.9) 100%
+      );
+  }
+
+  .about-hero__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 4.5rem 0 3rem;
   }
 
   .about-hero__inner {
@@ -2374,8 +2404,13 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .about-hero__media img,
     .about-hero__inner {
       animation: none;
+    }
+
+    .about-hero__media img {
+      transform: none;
     }
   }
 
