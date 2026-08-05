@@ -1308,11 +1308,17 @@
   /* ---- Pilot page ---- */
   .pilot-hero {
     position: relative;
-    min-height: min(88vh, 44rem);
+    min-height: clamp(26rem, 62vh, 36rem);
     display: flex;
     align-items: flex-end;
     overflow: hidden;
     color: #f7faf8;
+  }
+
+  @media (min-width: 768px) {
+    .pilot-hero {
+      min-height: clamp(30rem, 64vh, 40rem);
+    }
   }
 
   .pilot-hero__media {
@@ -2055,11 +2061,17 @@
   /* ---- About page ---- */
   .about-hero {
     position: relative;
-    min-height: min(72vh, 36rem);
+    min-height: clamp(26rem, 62vh, 36rem);
     display: flex;
     align-items: flex-end;
     overflow: hidden;
     color: #eef4f1;
+  }
+
+  @media (min-width: 768px) {
+    .about-hero {
+      min-height: clamp(30rem, 64vh, 40rem);
+    }
   }
 
   .about-hero__media {
