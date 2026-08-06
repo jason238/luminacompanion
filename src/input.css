@@ -1247,7 +1247,7 @@
     .product-gallery__inner {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.75rem;
-      align-items: center;
+      align-items: stretch;
     }
   }
 
@@ -1257,13 +1257,16 @@
     overflow: hidden;
     background: color-mix(in oklab, var(--color-surface) 80%, var(--color-canvas-deep));
     border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+    aspect-ratio: 3 / 2;
   }
 
   .product-gallery__item img {
     display: block;
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
   }
 
   .product-roadmap {
