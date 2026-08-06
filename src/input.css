@@ -1122,9 +1122,11 @@
     object-position: center;
   }
 
-  /* Family App screenshot â€” tall phone frame matches source (1080Ã—2312) */
+  /* Caregiver App screenshot — tall phone frame matches source (1080×2312) */
   .product-feature__media--phone {
     width: min(100%, 16.5rem);
+    margin-inline: auto;
+    justify-self: center;
     aspect-ratio: 1080 / 2312;
     background:
       radial-gradient(ellipse 70% 60% at 50% 40%, rgba(90, 125, 108, 0.1), transparent 70%),
