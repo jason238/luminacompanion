@@ -702,6 +702,240 @@
     line-height: 1.65;
   }
 
+  /* ---- Vision intro + diagram ---- */
+  .home-vision {
+    padding-block: 3.5rem 1.5rem;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(154, 123, 82, 0.1), transparent 55%),
+      color-mix(in oklab, var(--color-canvas-deep) 40%, var(--color-surface));
+    border-top: 1px solid color-mix(in oklab, var(--color-line) 65%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    .home-vision {
+      padding-block: 4.5rem 1.75rem;
+    }
+  }
+
+  .home-vision .home-body {
+    max-width: none;
+  }
+
+  .home-invite .home-body,
+  .home-story .home-body,
+  .home-contribute .home-body {
+    max-width: none;
+  }
+
+  .home-vision-diagram {
+    padding-block: 0 3.5rem;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(154, 123, 82, 0.1), transparent 55%),
+      color-mix(in oklab, var(--color-canvas-deep) 40%, var(--color-surface));
+    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 65%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    .home-vision-diagram {
+      padding-block: 0 4.5rem;
+    }
+  }
+
+  .home-vision-diagram__figure {
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+    background: var(--color-surface);
+  }
+
+  .home-vision-diagram__figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 1.25rem;
+  }
+
+  /* ---- Capabilities (MVP + coming next) ---- */
+  .home-capabilities {
+    padding-block: 3.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .home-capabilities {
+      padding-block: 4.25rem;
+    }
+  }
+
+  .home-capabilities .home-heading {
+    max-width: none;
+    margin-bottom: 1.75rem;
+  }
+
+  .home-capabilities .home-kicker {
+    margin-bottom: 0.5rem;
+  }
+
+  .home-capabilities__group {
+    margin: 0 0 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--color-pine-dark);
+  }
+
+  .home-capabilities__intro {
+    margin-bottom: 2rem;
+    max-width: none;
+  }
+
+  .home-capabilities--alt {
+    background: color-mix(in oklab, var(--color-surface) 72%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-capabilities--next {
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 0%, rgba(90, 125, 108, 0.12), transparent 60%),
+      color-mix(in oklab, var(--color-canvas-deep) 45%, var(--color-surface));
+    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 65%, transparent);
+  }
+
+  .home-capability-grid {
+    display: grid;
+    gap: 2rem 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .home-capability-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.25rem 2rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .home-capability-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .home-capability {
+    margin: 0;
+    padding-top: 0.15rem;
+  }
+
+  .home-capability__title {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.2rem;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--color-pine-dark);
+  }
+
+  .home-capability__lead {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.02rem;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    color: var(--color-ink);
+  }
+
+  .home-capability__body {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .home-capability__body + .home-capability__body,
+  .home-capability__list + .home-capability__body,
+  .home-capability__body + .home-capability__list {
+    margin-top: 0.65rem;
+  }
+
+  .home-capability__body strong {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .home-capability__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-capability__list li {
+    position: relative;
+    padding-left: 1.15rem;
+    color: var(--color-ink-muted);
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .home-capability__list li + li {
+    margin-top: 0.35rem;
+  }
+
+  .home-capability__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--color-pine);
+  }
+
+  /* ---- Pilot invite CTA ---- */
+  .home-invite {
+    background:
+      linear-gradient(
+        165deg,
+        color-mix(in oklab, var(--color-pine) 92%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
+      );
+    color: #eef4f1;
+  }
+
+  .home-invite .home-heading {
+    color: #f7faf8;
+  }
+
+  .home-invite .home-body {
+    color: color-mix(in oklab, #eef4f1 88%, transparent);
+  }
+
+  .home-invite .btn-primary {
+    background: #f7faf8;
+    border-color: #f7faf8;
+    color: var(--color-pine-dark);
+  }
+
+  .home-invite .btn-primary:hover {
+    background: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    border-color: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    color: var(--color-pine-dark);
+  }
+
+  /* ---- Story + contribute link-outs ---- */
+  .home-story {
+    background: color-mix(in oklab, var(--color-surface) 70%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-contribute {
+    background: transparent;
+  }
+
   /* ---- Real families ---- */
   .home-families {
     background: color-mix(in oklab, var(--color-surface) 70%, transparent);
