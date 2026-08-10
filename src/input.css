@@ -2460,6 +2460,41 @@
     line-height: 1.7;
   }
 
+  .about-luminas-vision {
+    padding-block: 3.25rem 2.5rem;
+    background: color-mix(in oklab, var(--color-surface) 70%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .about-luminas-vision__inner {
+    width: min(var(--width-site), calc(100% - 2rem));
+    margin-inline: auto;
+  }
+
+  .about-luminas-vision__lead {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+    color: var(--color-pine-dark);
+  }
+
+  .about-luminas-vision .about-body strong {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .about-diagram {
+    padding-block: 2.5rem 3.25rem;
+  }
+
+  .about-diagram__inner {
+    width: min(var(--width-site), calc(100% - 2rem));
+    margin-inline: auto;
+  }
+
   .about-section {
     padding-block: 3rem 3.25rem;
   }
@@ -2554,7 +2589,8 @@
   }
 
   .about-vision .about-body {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    max-width: none;
   }
 
   .about-vision__diagram {
