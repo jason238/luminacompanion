@@ -2856,15 +2856,16 @@
   .privacy-section__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
+    max-width: var(--width-measure);
   }
 
   .privacy-section__inner--form {
-    max-width: none;
+    max-width: var(--width-form);
   }
 
   .privacy-section__inner--form .privacy-heading,
   .privacy-form {
-    max-width: var(--width-form);
+    max-width: none;
   }
 
   .privacy-heading {
@@ -2893,7 +2894,7 @@
 
   .privacy-body {
     margin: 0 0 1.1rem;
-    max-width: var(--width-measure);
+    max-width: none;
     color: var(--color-ink-muted);
     font-size: var(--text-body);
     line-height: 1.7;
