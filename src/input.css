@@ -1746,12 +1746,11 @@
   }
 
   .pilot-mvp .pilot-heading.pilot-mvp__heading {
-    text-align: center;
-    margin-inline: auto;
+    text-align: left;
+    margin-inline: 0;
     margin-bottom: 1.15rem;
     max-width: none;
-    white-space: nowrap;
-    font-size: clamp(1.05rem, 3.6vw, 2.15rem);
+    font-size: var(--text-section);
     color: #f7faf8;
   }
 
@@ -1772,12 +1771,11 @@
 
   .pilot-mvp__caption {
     margin: 1.15rem 0 0;
-    max-width: 40rem;
+    max-width: var(--width-measure);
     color: color-mix(in oklab, #eef4f1 88%, transparent);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.6;
-    text-align: center;
-    margin-inline: auto;
+    text-align: left;
   }
 
   .pilot-heading {
@@ -2860,13 +2858,13 @@
   }
 
   .privacy-section__inner--form {
-    max-width: none;
+    max-width: var(--width-measure);
   }
 
   .privacy-section__inner--form .privacy-heading,
   .privacy-section__inner--form .privacy-body,
   .privacy-form {
-    max-width: var(--width-form);
+    max-width: none;
   }
 
   .privacy-heading {
