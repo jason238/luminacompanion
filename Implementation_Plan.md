@@ -262,7 +262,7 @@ Goal: ship all six English pages with correct copy and **responsive** layout. Fo
 
 ## PHASE 2 — POLISH & DISCOVERABILITY (Tasks 2.1 – 2.3)
 
-- [ ] **2.1 — SEO + social meta + sitemap**
+- [x] **2.1 — SEO + social meta + sitemap**
   - Per-page title/description; OG/Twitter tags.
   - Default share image: `assets/images/og/og-default.png` (already present).
   - `robots.txt`, `sitemap.xml`, canonicals under `https://www.luminacompanion.ca/`.
