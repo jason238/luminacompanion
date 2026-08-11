@@ -22,6 +22,20 @@
   --width-site: 70rem;
   --width-measure: 42rem;
   --width-form: 36rem;
+
+  /* Type scale — shared across pages */
+  --text-body: 1.05rem;
+  --text-section: clamp(1.55rem, 3.2vw, 2.15rem);
+
+  /* Photo heroes (Home / Pilot / About) */
+  --text-photo-brand: clamp(1.35rem, 2.6vw, 1.65rem);
+  --text-photo-headline: clamp(1.65rem, 3.4vw, 2.25rem);
+  --text-photo-subhead: 1.08rem;
+
+  /* Text heroes (Product / Contribute / Privacy) */
+  --text-plain-brand: clamp(1.85rem, 4.5vw, 2.5rem);
+  --text-plain-headline: clamp(1.55rem, 3.4vw, 2.15rem);
+  --text-plain-subhead: 1.08rem;
 }
 
 @layer base {
@@ -352,7 +366,7 @@
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.65rem, 3.6vw, 2.35rem);
+    font-size: var(--text-section);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--color-pine-dark);
@@ -363,7 +377,7 @@
     margin: 0;
     max-width: var(--width-measure);
     color: var(--color-ink-muted);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.7;
   }
 
@@ -448,58 +462,42 @@
   }
 
   .home-hero__copy {
-    max-width: 54rem;
+    max-width: var(--width-measure);
   }
 
-  @media (min-width: 768px) {
-    .home-hero__copy {
-      max-width: min(58rem, 88%);
-    }
-  }
-
-  /* Brand mark â€” present, not louder than the hook */
+  /* Brand mark — present, not louder than the hook */
   .home-hero__logo {
     margin: 0 0 0.35rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    font-size: var(--text-photo-brand);
     letter-spacing: -0.02em;
     line-height: 1.15;
     color: #f7faf8;
   }
 
-  /* Hook â€” wide + slightly smaller so it stays in the bottom band */
+  /* Hook */
   .home-hero__headline {
     margin: 0 0 0.4rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.2vw, 2.25rem);
+    font-size: var(--text-photo-headline);
     letter-spacing: -0.03em;
-    line-height: 1.12;
+    line-height: 1.15;
     color: #f7faf8;
     text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
-    max-width: 48rem;
     text-wrap: balance;
-  }
-
-  @media (min-width: 768px) {
-    .home-hero__headline {
-      max-width: none;
-      white-space: nowrap;
-      font-size: clamp(1.85rem, 2.6vw, 2.35rem);
-    }
   }
 
   /* Positioning */
   .home-hero__subhead {
     margin: 0;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
-    letter-spacing: -0.015em;
-    line-height: 1.35;
-    color: #f3efe6;
-    max-width: 52rem;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: var(--text-photo-subhead);
+    letter-spacing: 0;
+    line-height: 1.65;
+    color: rgba(247, 250, 248, 0.92);
     text-wrap: pretty;
   }
 
@@ -507,25 +505,13 @@
     margin-top: 0.2rem;
   }
 
-  @media (min-width: 768px) {
-    .home-hero__subhead {
-      white-space: nowrap;
-    }
-  }
-
-  /* Value â€” wide, short vertical footprint */
+  /* Value */
   .home-hero__support {
     margin: 0;
-    max-width: 54rem;
+    max-width: var(--width-measure);
     color: rgba(247, 250, 248, 0.94);
-    font-size: 0.98rem;
+    font-size: var(--text-photo-subhead);
     line-height: 1.55;
-  }
-
-  @media (min-width: 768px) {
-    .home-hero__support {
-      max-width: 56rem;
-    }
   }
 
   .home-hero .btn-row {
@@ -564,20 +550,12 @@
 
   .home-understanding .home-heading {
     color: #f7faf8;
-    max-width: 22rem;
-    font-size: clamp(1.85rem, 4.2vw, 2.85rem);
     margin-bottom: 1.75rem;
     line-height: 1.15;
   }
 
-  @media (min-width: 768px) {
-    .home-understanding .home-heading {
-      max-width: none;
-    }
-  }
-
   .home-understanding__body {
-    max-width: 54rem;
+    max-width: var(--width-measure);
   }
 
   .home-understanding__lead {
@@ -595,9 +573,9 @@
   }
 
   .home-understanding .home-body {
-    max-width: 54rem;
+    max-width: var(--width-measure);
     color: color-mix(in oklab, #eef4f1 86%, transparent);
-    font-size: 1.08rem;
+    font-size: var(--text-body);
     line-height: 1.75;
   }
 
@@ -623,13 +601,13 @@
   }
 
   .home-problem__copy {
-    max-width: 54rem;
+    max-width: var(--width-measure);
     display: grid;
     gap: 1rem;
   }
 
   .home-problem .home-body {
-    font-size: 1.15rem;
+    font-size: var(--text-body);
     max-width: none;
   }
 
@@ -717,6 +695,7 @@
     }
   }
 
+  /* Vision intro spans full site rail to match diagram below */
   .home-vision .home-body {
     max-width: none;
   }
@@ -724,7 +703,7 @@
   .home-invite .home-body,
   .home-story .home-body,
   .home-contribute .home-body {
-    max-width: none;
+    max-width: var(--width-measure);
   }
 
   .home-vision-diagram {
@@ -1013,7 +992,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    max-width: 28rem;
+    max-width: var(--width-form);
   }
 
   @media (min-width: 640px) {
@@ -1072,7 +1051,7 @@
     margin: 0.85rem 0 0;
     font-size: 0.95rem;
     line-height: 1.55;
-    max-width: 36rem;
+    max-width: var(--width-form);
   }
 
   .home-form-note {
@@ -1103,19 +1082,22 @@
   /* ---- Footer CTA row ---- */
   .home-footer-cta {
     padding-block: 3.5rem 4rem;
-    background: var(--color-pine-dark);
+    background:
+      linear-gradient(
+        165deg,
+        color-mix(in oklab, var(--color-pine) 92%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
+      );
     color: #eef4f1;
-    text-align: center;
   }
 
   .home-footer-cta .home-heading {
     color: #f7faf8;
-    margin-inline: auto;
-    max-width: 22ch;
+    margin-bottom: 0.85rem;
   }
 
   .home-footer-cta .btn-row {
-    justify-content: center;
+    margin-top: 1.5rem;
   }
 
   .home-footer-cta .btn-secondary {
@@ -1185,7 +1167,7 @@
     margin: 0 0 0.85rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+    font-size: var(--text-plain-brand);
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: #f7faf8;
@@ -1205,16 +1187,16 @@
     margin: 0 0 1.35rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.85rem, 4.2vw, 2.55rem);
+    font-size: var(--text-plain-headline);
     letter-spacing: -0.03em;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #f7faf8;
   }
 
   .product-hero__subhead {
     margin: 0 0 1.5rem;
     color: rgba(247, 250, 248, 0.9);
-    font-size: 1.08rem;
+    font-size: var(--text-plain-subhead);
     line-height: 1.65;
   }
 
@@ -1261,7 +1243,7 @@
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+    font-size: var(--text-section);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--color-pine-dark);
@@ -1271,7 +1253,7 @@
     margin: 0;
     max-width: var(--width-measure);
     color: var(--color-ink-muted);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.7;
   }
 
@@ -1558,9 +1540,13 @@
 
   .product-closing {
     padding-block: 3.5rem 4rem;
-    background: var(--color-pine-dark);
+    background:
+      linear-gradient(
+        165deg,
+        color-mix(in oklab, var(--color-pine) 92%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
+      );
     color: #eef4f1;
-    text-align: center;
   }
 
   .product-closing__inner {
@@ -1570,12 +1556,43 @@
 
   .product-closing .product-heading {
     color: #f7faf8;
-    margin-inline: auto;
-    max-width: 22ch;
+    margin-bottom: 0.85rem;
+  }
+
+  .product-closing__body {
+    margin: 0;
+    max-width: var(--width-measure);
+    color: color-mix(in oklab, #eef4f1 88%, transparent);
+    font-size: var(--text-body);
+    line-height: 1.7;
   }
 
   .product-closing .btn-row {
-    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .product-closing .btn-primary {
+    background: #f7faf8;
+    border-color: #f7faf8;
+    color: var(--color-pine-dark);
+  }
+
+  .product-closing .btn-primary:hover {
+    background: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    border-color: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    color: var(--color-pine-dark);
+  }
+
+  .product-closing .btn-secondary {
+    border-color: color-mix(in oklab, #f7faf8 65%, transparent);
+    color: #f7faf8;
+    background: transparent;
+  }
+
+  .product-closing .btn-secondary:hover {
+    background: color-mix(in oklab, #f7faf8 12%, transparent);
+    border-color: #f7faf8;
+    color: #f7faf8;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1642,32 +1659,33 @@
   }
 
   .pilot-hero__brand {
-    margin: 0 0 0.65rem;
+    margin: 0 0 0.5rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(2.2rem, 5.5vw, 3.25rem);
-    letter-spacing: -0.03em;
-    line-height: 1.05;
+    font-size: var(--text-photo-brand);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     color: #f7faf8;
-    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.25);
   }
 
   .pilot-hero__headline {
-    margin: 0 0 0.85rem;
+    margin: 0 0 0.65rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.45rem, 3.2vw, 2rem);
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    color: #f3efe6;
+    font-size: var(--text-photo-headline);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: #f7faf8;
+    text-wrap: balance;
   }
 
   .pilot-hero__subhead {
     margin: 0;
-    max-width: 32rem;
+    max-width: var(--width-measure);
     color: rgba(247, 250, 248, 0.92);
-    font-size: 1.08rem;
-    line-height: 1.6;
+    font-size: var(--text-photo-subhead);
+    line-height: 1.65;
   }
 
   .pilot-hero .btn-row {
@@ -1766,7 +1784,7 @@
     margin: 0 0 1.15rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+    font-size: var(--text-section);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--color-pine-dark);
@@ -1785,7 +1803,7 @@
     margin: 0;
     max-width: var(--width-measure);
     color: var(--color-ink-muted);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.7;
   }
 
@@ -2065,7 +2083,7 @@
     margin: 0 0 0.85rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+    font-size: var(--text-plain-brand);
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: #f7faf8;
@@ -2075,7 +2093,7 @@
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+    font-size: var(--text-plain-headline);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: #f3efe6;
@@ -2084,7 +2102,7 @@
   .contribute-hero__subhead {
     margin: 0;
     color: rgba(247, 250, 248, 0.9);
-    font-size: 1.08rem;
+    font-size: var(--text-plain-subhead);
     line-height: 1.65;
   }
 
@@ -2136,7 +2154,7 @@
     margin: 0 0 1.15rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+    font-size: var(--text-section);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--color-pine-dark);
@@ -2146,7 +2164,7 @@
     margin: 0;
     max-width: var(--width-measure);
     color: var(--color-ink-muted);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.7;
   }
 
@@ -2414,21 +2432,33 @@
     animation: home-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  .about-hero__headline {
-    margin: 0 0 1.25rem;
+  .about-hero__brand {
+    margin: 0 0 0.5rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.75rem, 4vw, 2.35rem);
+    font-size: var(--text-photo-brand);
     letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #f7faf8;
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .about-hero__headline {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: var(--text-photo-headline);
+    letter-spacing: -0.03em;
     color: #f7faf8;
     line-height: 1.15;
+    text-wrap: balance;
   }
 
   .about-hero__subhead {
     margin: 0;
-    max-width: 38rem;
+    max-width: var(--width-measure);
     color: rgba(247, 250, 248, 0.92);
-    font-size: 1.1rem;
+    font-size: var(--text-photo-subhead);
     line-height: 1.65;
   }
 
@@ -2493,7 +2523,7 @@
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.45rem, 2.8vw, 1.75rem);
+    font-size: var(--text-section);
     letter-spacing: -0.02em;
     color: var(--color-pine-dark);
     line-height: 1.2;
@@ -2503,7 +2533,7 @@
     margin: 0;
     max-width: var(--width-measure);
     color: var(--color-ink-muted);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.7;
   }
 
@@ -2701,7 +2731,7 @@
     min-width: 8rem;
   }
 
-  @media (max-width: 479px) {
+  @media (max-width: 639px) {
     .about-form__submit {
       width: 100%;
       justify-self: stretch;
@@ -2785,7 +2815,7 @@
     margin: 0 0 0.85rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+    font-size: var(--text-plain-brand);
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: #f7faf8;
@@ -2795,7 +2825,7 @@
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+    font-size: var(--text-plain-headline);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: #f3efe6;
@@ -2804,7 +2834,7 @@
   .privacy-hero__subhead {
     margin: 0;
     color: rgba(247, 250, 248, 0.9);
-    font-size: 1.08rem;
+    font-size: var(--text-plain-subhead);
     line-height: 1.65;
   }
 
@@ -2841,7 +2871,7 @@
     margin: 0 0 1.15rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+    font-size: var(--text-section);
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--color-pine-dark);
@@ -2865,7 +2895,7 @@
     margin: 0 0 1.1rem;
     max-width: var(--width-measure);
     color: var(--color-ink-muted);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     line-height: 1.7;
   }
 
