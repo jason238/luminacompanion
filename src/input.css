@@ -700,6 +700,50 @@
     max-width: none;
   }
 
+  .home-vision__hook {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-vision__hook-lead {
+    margin: 0;
+    max-width: var(--width-measure);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem);
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+  }
+
+  .home-vision__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .home-vision__list li {
+    position: relative;
+    padding-left: 1.15rem;
+    color: var(--color-ink-muted);
+    font-size: var(--text-body);
+    line-height: 1.55;
+  }
+
+  .home-vision__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--color-pine);
+  }
+
   .home-invite .home-body,
   .home-story .home-body,
   .home-contribute .home-body {
@@ -903,6 +947,13 @@
     background: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
     border-color: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
     color: var(--color-pine-dark);
+  }
+
+  .home-invite__note {
+    margin: 0.85rem 0 0;
+    color: color-mix(in oklab, #eef4f1 72%, transparent);
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   /* ---- Story + contribute link-outs ---- */
