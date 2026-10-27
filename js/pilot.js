@@ -45,9 +45,11 @@
       var relationship = form.querySelector("#pilot-relationship");
       var city = form.querySelector("#pilot-city");
       var situation = form.querySelector("#pilot-situation");
+      var tabletChecked = form.querySelector('input[name="android_tablet"]:checked');
+      var osChecked = form.querySelector('input[name="caregiver_os"]:checked');
       var wifiChecked = form.querySelector('input[name="wifi"]:checked');
       var languageChecked = form.querySelector('input[name="language"]:checked');
-      var checkinsChecked = form.querySelector('input[name="checkins"]:checked');
+      var interestChecked = form.querySelector('input[name="interest"]:checked');
 
       if (!name || !(name.value || "").trim()) {
         showError("Please enter your name.", name);
@@ -75,21 +77,37 @@
       }
 
       if (!city || !(city.value || "").trim()) {
-        showError("Please enter the senior's city (Ottawa, ON).", city);
+        showError("Please enter the senior's location (Ottawa, ON).", city);
         return;
       }
 
       if (!situation || !(situation.value || "").trim()) {
         showError(
-          "Please briefly describe the senior's living situation and wellbeing.",
+          "Please briefly describe the senior's current living situation.",
           situation
+        );
+        return;
+      }
+
+      if (!tabletChecked) {
+        showError(
+          "Please tell us whether your senior has a compatible Android tablet.",
+          form.querySelector('input[name="android_tablet"]')
+        );
+        return;
+      }
+
+      if (!osChecked) {
+        showError(
+          "Please tell us which mobile OS your caregiver phone is running.",
+          form.querySelector('input[name="caregiver_os"]')
         );
         return;
       }
 
       if (!wifiChecked) {
         showError(
-          "Please tell us whether you have stable home WiFi.",
+          "Please tell us whether there is stable home Wi-Fi.",
           form.querySelector('input[name="wifi"]')
         );
         return;
@@ -97,16 +115,16 @@
 
       if (!languageChecked) {
         showError(
-          "Please select a preferred language.",
+          "Please select a preferred primary language.",
           form.querySelector('input[name="language"]')
         );
         return;
       }
 
-      if (!checkinsChecked) {
+      if (!interestChecked) {
         showError(
-          "Please tell us if you're open to occasional check-ins.",
-          form.querySelector('input[name="checkins"]')
+          "Please tell us what you're most interested in.",
+          form.querySelector('input[name="interest"]')
         );
         return;
       }

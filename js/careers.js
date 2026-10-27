@@ -1,8 +1,14 @@
 /**
- * Careers student application — validates fields, then POSTs to Formspree via LuminaForms.
+ * Careers talent-pool form — validates fields, then POSTs to Formspree via LuminaForms.
  */
 (function () {
-  var WHY_MAX = 700;
+  var BACKGROUND_MAX_WORDS = 200;
+
+  function wordCount(value) {
+    var trimmed = (value || "").trim();
+    if (!trimmed) return 0;
+    return trimmed.split(/\s+/).length;
+  }
 
   function initCareersForm() {
     var form = document.querySelector("[data-careers-form]");
@@ -15,8 +21,7 @@
     var fields = form.querySelectorAll("input, select, textarea");
     var ottawaNote = form.querySelector("[data-careers-ottawa-note]");
     var ottawaGroup = form.querySelector("[data-careers-ottawa-group]");
-    var eligibilityNote = form.querySelector("[data-careers-eligibility-note]");
-    var eligibilityGroup = form.querySelector("[data-careers-eligibility-group]");
+    var interestGroup = form.querySelector("[data-careers-interest-group]");
     var subjectEl = form.querySelector("[data-careers-subject]");
     var replytoEl = form.querySelector("[data-careers-replyto]");
 
@@ -38,9 +43,9 @@
       errorEl.textContent = message;
       if (successEl) successEl.hidden = true;
       if (ottawaGroup) ottawaGroup.removeAttribute("aria-invalid");
-      if (eligibilityGroup) eligibilityGroup.removeAttribute("aria-invalid");
+      if (interestGroup) interestGroup.removeAttribute("aria-invalid");
       if (focusEl) {
-        if (focusEl === ottawaGroup || focusEl === eligibilityGroup) {
+        if (focusEl === ottawaGroup || focusEl === interestGroup) {
           invalidateGroup(focusEl);
         } else {
           focusEl.setAttribute("aria-invalid", "true");
@@ -53,7 +58,7 @@
       errorEl.hidden = true;
       errorEl.textContent = "";
       if (ottawaGroup) ottawaGroup.removeAttribute("aria-invalid");
-      if (eligibilityGroup) eligibilityGroup.removeAttribute("aria-invalid");
+      if (interestGroup) interestGroup.removeAttribute("aria-invalid");
       fields.forEach(function (field) {
         field.removeAttribute("aria-invalid");
       });
@@ -64,12 +69,10 @@
       field.addEventListener("change", function () {
         clearError();
         showConditionalNote(ottawaNote, "ottawa_based");
-        showConditionalNote(eligibilityNote, "eligibility");
       });
     });
 
     showConditionalNote(ottawaNote, "ottawa_based");
-    showConditionalNote(eligibilityNote, "eligibility");
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -80,29 +83,20 @@
       var phone = form.querySelector("#careers-phone");
       var school = form.querySelector("#careers-school");
       var year = form.querySelector("#careers-year");
-      var eligibilityChecked = form.querySelector(
-        'input[name="eligibility"]:checked'
-      );
       var ottawaChecked = form.querySelector('input[name="ottawa_based"]:checked');
-      var commitChecked = form.querySelector(
-        'input[name="availability_commitment"]:checked'
+      var interestChecked = form.querySelector(
+        'input[name="area_of_interest"]:checked'
       );
-      var availability = form.querySelector("#careers-availability");
       var portfolio = form.querySelector("#careers-portfolio");
       var linkedin = form.querySelector("#careers-linkedin");
-      var why = form.querySelector("#careers-why");
+      var background = form.querySelector("#careers-background");
 
       if (!name || !(name.value || "").trim()) {
         showError("Please enter your name.", name);
         return;
       }
 
-      if (!email || !(email.value || "").trim()) {
-        showError("Please enter a valid email address.", email);
-        return;
-      }
-
-      if (!email.checkValidity()) {
+      if (!email || !(email.value || "").trim() || !email.checkValidity()) {
         showError("Please enter a valid email address.", email);
         return;
       }
@@ -122,46 +116,45 @@
         return;
       }
 
-      if (!eligibilityChecked) {
-        showError("Please confirm whether you meet the eligibility requirement.", eligibilityGroup);
-        return;
-      }
-
       if (!ottawaChecked) {
-        showError("Please tell us whether you are currently based in Ottawa.", ottawaGroup);
-        return;
-      }
-
-      if (!commitChecked) {
         showError(
-          "Please tell us whether you can commit approximately 60 hours.",
-          form.querySelector('input[name="availability_commitment"]')
+          "Please tell us whether you are currently based in Ottawa.",
+          ottawaGroup
         );
         return;
       }
 
-      if (!availability || !(availability.value || "").trim()) {
-        showError("Please describe your approximate availability.", availability);
+      if (!interestChecked) {
+        showError("Please select at least one area of interest.", interestGroup);
         return;
       }
 
       if (!portfolio || !(portfolio.value || "").trim()) {
-        showError("Please provide a link to your video portfolio.", portfolio);
+        showError(
+          "Please paste your resume, or links to your portfolio or video examples.",
+          portfolio
+        );
         return;
       }
 
       if (linkedin && (linkedin.value || "").trim() && !linkedin.checkValidity()) {
-        showError("Please enter a valid LinkedIn URL, or leave that field blank.", linkedin);
+        showError(
+          "Please enter a valid LinkedIn URL, or leave that field blank.",
+          linkedin
+        );
         return;
       }
 
-      if (!why || !(why.value || "").trim()) {
-        showError("Please tell us why you are interested in working with Lumina.", why);
+      if (!background || !(background.value || "").trim()) {
+        showError(
+          "Please tell us about your background and why you'd like to work with Lumina.",
+          background
+        );
         return;
       }
 
-      if ((why.value || "").length > WHY_MAX) {
-        showError("Please keep that answer to about 100 words.", why);
+      if (wordCount(background.value) > BACKGROUND_MAX_WORDS) {
+        showError("Please keep that answer to 200 words.", background);
         return;
       }
 
@@ -172,7 +165,7 @@
 
       if (subjectEl) {
         subjectEl.value =
-          "New Lumina Student Application — " + (name.value || "").trim();
+          "New Lumina Talent Pool Submission — " + (name.value || "").trim();
       }
 
       if (replytoEl) {

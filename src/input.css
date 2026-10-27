@@ -381,88 +381,27 @@
     line-height: 1.7;
   }
 
-  /* ---- Home hero (full-bleed) ---- */
+  /* ---- Home hero (text) ---- */
   .home-hero {
-    position: relative;
-    /*
-      Shorter than full viewport so the landscape Pilot photo can â€œzoom outâ€
-      (less aggressive crop) â€” more of Michaelâ€™s face + Hub tablet stay visible.
-    */
-    min-height: clamp(26rem, 62vh, 36rem);
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-    color: #f4f7f5;
-  }
-
-  @media (min-width: 768px) {
-    .home-hero {
-      min-height: clamp(30rem, 64vh, 40rem);
-    }
-  }
-
-  .home-hero__media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .home-hero__media img {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    object-fit: cover;
-    /* Center on face + tablet; no ken-burns zoom-in */
-    object-position: 52% 42%;
-    transform: none;
-  }
-
-  @media (min-width: 768px) {
-    .home-hero__media img {
-      object-position: 48% 46%;
-    }
-  }
-
-  .home-hero__veil {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    /* Keep face/tablet clear; darken only the bottom copy band */
+    padding-block: 3.75rem 3.25rem;
     background:
+      radial-gradient(ellipse 90% 70% at 15% 0%, rgba(90, 125, 108, 0.2), transparent 60%),
       linear-gradient(
-        180deg,
-        transparent 0%,
-        transparent 40%,
-        rgba(15, 32, 28, 0.22) 62%,
-        rgba(15, 32, 28, 0.72) 82%,
-        rgba(15, 32, 28, 0.9) 100%
-      ),
-      linear-gradient(
-        90deg,
-        rgba(15, 32, 28, 0.18) 0%,
-        transparent 45%
+        165deg,
+        color-mix(in oklab, var(--color-pine) 94%, #0f201c) 0%,
+        var(--color-pine-dark) 100%
       );
+    color: #eef4f1;
   }
 
   .home-hero__content {
-    position: relative;
-    z-index: 2;
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
-    margin-top: auto;
-    /* Compact + low so copy sits under the face */
-    padding: 0.75rem 0 1.35rem;
     animation: home-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  @media (min-width: 768px) {
-    .home-hero__content {
-      padding: 0.5rem 0 1.75rem;
-    }
-  }
-
   .home-hero__copy {
-    max-width: var(--width-measure);
+    max-width: 44rem;
   }
 
   /* Brand mark — present, not louder than the hook */
@@ -478,14 +417,13 @@
 
   /* Hook */
   .home-hero__headline {
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.85rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: var(--text-photo-headline);
+    font-size: clamp(2rem, 4.4vw, 3.15rem);
     letter-spacing: -0.03em;
     line-height: 1.15;
     color: #f7faf8;
-    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
     text-wrap: balance;
   }
 
@@ -514,20 +452,41 @@
     line-height: 1.55;
   }
 
-  .home-hero .btn-row {
-    margin-top: 1.85rem;
+  .home-hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin-top: 1.75rem;
   }
 
-  .home-hero .btn-secondary {
-    border-color: rgba(247, 250, 248, 0.7);
-    color: #f7faf8;
-    background: rgba(26, 46, 42, 0.35);
-  }
-
-  .home-hero .btn-secondary:hover {
-    background: rgba(26, 46, 42, 0.55);
+  .home-hero .btn-primary {
+    background: #f7faf8;
     border-color: #f7faf8;
+    color: var(--color-pine-dark);
+  }
+
+  .home-hero .btn-primary:hover {
+    background: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    border-color: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    color: var(--color-pine-dark);
+  }
+
+  .home-hero__jump {
     color: #f7faf8;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .home-hero__jump:hover {
+    text-decoration: underline;
+  }
+
+  .home-hero__micro {
+    margin: 1rem 0 0;
+    color: color-mix(in oklab, #eef4f1 74%, transparent);
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   /* ---- Philosophy (below hero) ---- */
@@ -1194,6 +1153,303 @@
     }
   }
 
+  /* ---- Homepage sections (Oct 2026 copy) ---- */
+  #how-it-works,
+  #apply {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .home-gap__list {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .home-gap__list li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--color-ink-muted);
+    font-size: var(--text-body);
+    line-height: 1.55;
+  }
+
+  .home-gap__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: var(--color-pine);
+  }
+
+  .home-callout {
+    margin: 1.75rem 0 0;
+    padding: 1.15rem 1.25rem;
+    border-left: 3px solid var(--color-warm);
+    border-radius: 0 1rem 1rem 0;
+    background: color-mix(in oklab, var(--color-surface) 80%, transparent);
+  }
+
+  .home-callout p {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: var(--text-body);
+    line-height: 1.7;
+  }
+
+  .home-solve {
+    background: color-mix(in oklab, var(--color-surface) 72%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-solve__figure {
+    margin: 0 0 2rem;
+    max-width: 28rem;
+  }
+
+  .home-solve__figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 22%;
+    border-radius: 1.15rem;
+  }
+
+  .home-solve__figure figcaption {
+    margin-top: 0.75rem;
+    color: var(--color-ink-muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .home-solve-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 800px) {
+    .home-solve-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .home-solve-card {
+    margin: 0;
+    padding: 1.35rem 1.25rem 1.4rem;
+    border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
+    border-radius: 1.15rem;
+    background: var(--color-surface);
+  }
+
+  .home-solve-card__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--color-pine-dark);
+  }
+
+  .home-solve-card__kicker {
+    margin: 0.35rem 0 0;
+    color: var(--color-moss);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .home-solve-card__label {
+    margin: 1rem 0 0.3rem;
+    color: var(--color-ink);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .home-solve-card__body {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .home-solve-card__body + .home-solve-card__body {
+    margin-top: 0.65rem;
+  }
+
+  .home-solve-card__body strong {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .home-solve__note {
+    margin: 1.5rem 0 0;
+    max-width: var(--width-measure);
+    color: var(--color-ink-muted);
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  .home-solve__more,
+  .home-trust__more {
+    margin: 1.15rem 0 0;
+  }
+
+  .home-text-link {
+    color: var(--color-pine-dark);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .home-text-link:hover {
+    text-decoration: underline;
+  }
+
+  .home-step__icon {
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.15rem;
+  }
+
+  .home-families .home-lede {
+    white-space: normal;
+  }
+
+  .home-quotes {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 800px) {
+    .home-quotes {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+  }
+
+  .home-quote {
+    margin: 0;
+    padding: 1.25rem 1.15rem 1.3rem;
+    border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
+    border-radius: 1.15rem;
+    background: var(--color-surface);
+  }
+
+  .home-quote blockquote {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .home-quote figcaption {
+    margin-top: 0.9rem;
+    color: var(--color-pine-dark);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .home-video {
+    display: grid;
+    place-items: center;
+    margin-top: 1.75rem;
+    max-width: 52rem;
+    aspect-ratio: 16 / 9;
+    border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
+    border-radius: 1.25rem;
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 40%, rgba(90, 125, 108, 0.16), transparent 70%),
+      var(--color-pine-dark);
+    color: #f7faf8;
+  }
+
+  .home-video__label {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    letter-spacing: -0.02em;
+  }
+
+  .home-trust {
+    background: color-mix(in oklab, var(--color-surface) 70%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-badges li {
+    padding: 0.55rem 0.85rem;
+    border: 1px solid color-mix(in oklab, var(--color-pine) 28%, var(--color-line));
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-pine-dark);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .home-founder {
+    margin: 2rem 0 0;
+    max-width: 40rem;
+  }
+
+  .home-founder p {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    line-height: 1.45;
+  }
+
+  .home-founder footer {
+    margin-top: 0.85rem;
+    color: var(--color-ink-muted);
+    font-weight: 700;
+  }
+
+  .home-apply__waitlist {
+    margin-top: 2.25rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid color-mix(in oklab, #f7faf8 28%, transparent);
+    max-width: var(--width-form);
+  }
+
+  .home-apply__prompt {
+    margin: 0;
+    color: color-mix(in oklab, #eef4f1 90%, transparent);
+    font-size: var(--text-body);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .home-invite .home-form-success {
+    color: #f7faf8;
+  }
+
+  .home-invite .home-form-error {
+    color: #ffd0d0;
+  }
+
   /* ---- Product page ---- */
   .product-hero {
     padding-block: 3.5rem 2.5rem;
@@ -1646,6 +1902,173 @@
     color: #f7faf8;
   }
 
+  .product-hero .product-hero__subhead {
+    margin-bottom: 0;
+  }
+
+  .product-hero .btn-row {
+    margin-top: 1.65rem;
+  }
+
+  .product-hero .btn-primary {
+    background: #f7faf8;
+    border-color: #f7faf8;
+    color: var(--color-pine-dark);
+  }
+
+  .product-hero .btn-primary:hover {
+    background: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    border-color: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    color: var(--color-pine-dark);
+  }
+
+  .product-hero .btn-secondary {
+    border-color: color-mix(in oklab, #f7faf8 65%, transparent);
+    color: #f7faf8;
+    background: transparent;
+  }
+
+  .product-hero .btn-secondary:hover {
+    background: color-mix(in oklab, #f7faf8 12%, transparent);
+    border-color: #f7faf8;
+    color: #f7faf8;
+  }
+
+  .product-feature,
+  .product-compare {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .product-kicker {
+    margin: 0 0 0.5rem;
+    color: var(--color-moss);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  .product-bullets ul {
+    list-style: none;
+    margin: 0.55rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .product-bullets ul li {
+    padding-left: 1.05rem;
+    font-size: 0.98rem;
+  }
+
+  .product-bullets ul li::before {
+    width: 0.38rem;
+    height: 0.38rem;
+    background: transparent;
+    border: 1.5px solid var(--color-moss);
+  }
+
+  .product-quote {
+    display: block;
+    margin: 0.5rem 0 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid color-mix(in oklab, var(--color-moss) 55%, transparent);
+    color: var(--color-ink);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .product-compare {
+    padding-block: 3.25rem 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .product-compare {
+      padding-block: 4.25rem 5rem;
+    }
+  }
+
+  .product-compare__inner {
+    width: min(var(--width-site), calc(100% - 2rem));
+    margin-inline: auto;
+  }
+
+  .product-compare__hint {
+    margin: 1.15rem 0 0;
+    color: var(--color-ink-muted);
+    font-size: 0.92rem;
+  }
+
+  @media (min-width: 960px) {
+    .product-compare__hint {
+      display: none;
+    }
+  }
+
+  .product-compare__scroll {
+    margin-top: 0.85rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
+    border-radius: 1rem;
+    background: var(--color-surface);
+  }
+
+  .product-compare table {
+    width: 100%;
+    min-width: 62rem;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  .product-compare th,
+  .product-compare td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+  }
+
+  .product-compare tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .product-compare th {
+    background: color-mix(in oklab, var(--color-pine) 12%, var(--color-surface));
+    color: var(--color-pine-dark);
+    font-weight: 700;
+  }
+
+  .product-compare td:first-child,
+  .product-compare tbody th {
+    color: var(--color-ink);
+    font-weight: 700;
+    background: var(--color-surface);
+  }
+
+  .product-compare tbody tr:nth-child(even) td,
+  .product-compare tbody tr:nth-child(even) th {
+    background: color-mix(in oklab, var(--color-canvas) 55%, var(--color-surface));
+  }
+
+  .product-compare th:nth-child(2),
+  .product-compare td:nth-child(2) {
+    background: color-mix(in oklab, var(--color-pine) 14%, var(--color-surface));
+  }
+
+  .product-compare tbody tr:nth-child(even) td:nth-child(2) {
+    background: color-mix(in oklab, var(--color-pine) 18%, var(--color-surface));
+  }
+
+  .product-compare code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    padding: 0.05em 0.3em;
+    border-radius: 0.25rem;
+    background: color-mix(in oklab, var(--color-pine) 10%, var(--color-surface));
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .product-hero__inner {
       animation: none;
@@ -1731,6 +2154,21 @@
     text-wrap: balance;
   }
 
+  .pilot-hero__badge {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 0 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid color-mix(in oklab, #f7faf8 42%, transparent);
+    border-radius: 999px;
+    background: rgba(15, 32, 28, 0.35);
+    color: rgba(247, 250, 248, 0.94);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
   .pilot-hero__subhead {
     margin: 0;
     max-width: var(--width-measure);
@@ -1741,6 +2179,18 @@
 
   .pilot-hero .btn-row {
     margin-top: 1.5rem;
+  }
+
+  .pilot-hero .btn-primary {
+    background: #f7faf8;
+    border-color: #f7faf8;
+    color: var(--color-pine-dark);
+  }
+
+  .pilot-hero .btn-primary:hover {
+    background: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    border-color: color-mix(in oklab, #f7faf8 88%, var(--color-moss));
+    color: var(--color-pine-dark);
   }
 
   .pilot-section {
@@ -1856,6 +2306,28 @@
     line-height: 1.7;
   }
 
+  .pilot-intro {
+    margin-bottom: 0.35rem;
+  }
+
+  .pilot-note {
+    margin: 1.5rem 0 0;
+    max-width: var(--width-measure);
+    color: var(--color-ink-muted);
+    font-size: var(--text-body);
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .pilot-note a {
+    color: var(--color-pine-dark);
+    font-style: normal;
+  }
+
+  .pilot-note strong {
+    color: var(--color-ink);
+  }
+
   .pilot-list {
     list-style: none;
     margin: 0;
@@ -1919,6 +2391,7 @@
 
   .pilot-apply {
     padding-block: 3.5rem 4.5rem;
+    scroll-margin-top: 5.5rem;
     background:
       radial-gradient(ellipse 80% 70% at 50% 0%, rgba(90, 125, 108, 0.14), transparent 65%),
       color-mix(in oklab, var(--color-canvas-deep) 40%, var(--color-surface));
@@ -2017,6 +2490,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.75rem;
     }
+
+    .pilot-choices--stack {
+      grid-template-columns: 1fr;
+    }
   }
 
   .pilot-choice {
@@ -2049,6 +2526,31 @@
     height: 1.15rem;
     accent-color: var(--color-pine);
     flex-shrink: 0;
+  }
+
+  .pilot-choices--stack .pilot-choice {
+    align-items: flex-start;
+  }
+
+  .pilot-choices--stack .pilot-choice input {
+    margin-top: 0.2rem;
+  }
+
+  .pilot-choice__note {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--color-ink-muted);
+    font-weight: 400;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .pilot-hint {
+    margin: -0.2rem 0 0.75rem;
+    max-width: var(--width-measure);
+    color: var(--color-ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .pilot-form__submit {
@@ -2713,6 +3215,48 @@
     color: var(--color-pine-dark);
   }
 
+  .about-founder__role {
+    margin: 0.2rem 0 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-ink-muted);
+  }
+
+  .about-quote {
+    margin: 2rem 0 0;
+    padding: 0.15rem 0 0.15rem 1.15rem;
+    border-left: 3px solid var(--color-moss);
+  }
+
+  .about-quote p {
+    margin: 0;
+    max-width: var(--width-measure);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-pine-dark);
+  }
+
+  .about-quote p + p {
+    margin-top: 0.65rem;
+  }
+
+  .about-vision__caption {
+    margin: 1.15rem 0 0;
+    max-width: 46rem;
+    color: var(--color-ink-muted);
+    font-size: var(--text-body);
+    line-height: 1.7;
+  }
+
+  .about-vision .about-heading {
+    margin-bottom: 1.25rem;
+  }
+
   .about-contact {
     padding-block: 3.5rem 4.5rem;
     background:
@@ -3322,6 +3866,16 @@
     color: var(--color-pine-dark);
   }
 
+  .careers-subhead {
+    margin: 2rem 0 1.15rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.35rem;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--color-pine-dark);
+  }
+
   .careers-body {
     margin: 0;
     max-width: var(--width-measure);
@@ -3685,6 +4239,10 @@
     resize: vertical;
   }
 
+  .careers-field textarea.careers-resume {
+    min-height: min(70vh, 42rem);
+  }
+
   .careers-field select {
     appearance: none;
     background-image:
@@ -3739,6 +4297,20 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.75rem;
     }
+
+    .careers-choices--stack {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .careers-choices--stack .careers-choice {
+    align-items: flex-start;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .careers-choices--stack .careers-choice input {
+    margin-top: 0.2rem;
   }
 
   .careers-choice {
