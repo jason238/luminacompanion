@@ -1735,6 +1735,78 @@
     }
   }
 
+  .product-wearables {
+    width: min(var(--width-site), calc(100% - 2rem));
+    margin-inline: auto;
+    display: grid;
+    gap: 2.75rem;
+  }
+
+  .product-wearables__intro {
+    max-width: 46rem;
+  }
+
+  .product-wearables__pair {
+    display: grid;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .product-wearables__pair + .product-wearables__pair {
+    padding-top: 2.75rem;
+    border-top: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+  }
+
+  @media (min-width: 900px) {
+    .product-wearables__pair {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 3rem;
+    }
+
+    .product-wearables__pair--reverse {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    }
+
+    .product-wearables__pair--reverse .product-wearables__media {
+      order: 2;
+    }
+  }
+
+  .product-wearables__media {
+    margin: 0;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--color-surface) 80%, var(--color-canvas-deep));
+    border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+  }
+
+  .product-wearables__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .product-wearables__media--pendant {
+    width: min(100%, 22rem);
+    margin-inline: auto;
+    justify-self: center;
+    aspect-ratio: 542 / 613;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 42%, rgba(90, 125, 108, 0.1), transparent 70%),
+      var(--color-surface);
+  }
+
+  .product-wearables__media--pendant img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .product-wearables__copy .product-subheading {
+    margin-top: 0;
+  }
+
   .product-bullets {
     list-style: none;
     margin: 1.35rem 0 0;
