@@ -349,7 +349,9 @@
     margin-inline: auto;
   }
 
-  .home-section__inner--narrow {
+  /* Keep the site rail. Measure only limits line length, so the left
+     edge stays aligned with the header and with wide sections. */
+  .home-section__inner--narrow > * {
     max-width: var(--width-measure);
   }
 
@@ -429,6 +431,9 @@
   .home-hero__copy {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
+  }
+
+  .home-hero__copy > * {
     max-width: 44rem;
   }
 
@@ -1519,8 +1524,11 @@
   .product-hero__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
-    max-width: var(--width-measure);
     animation: home-fade-up 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .product-hero__inner > * {
+    max-width: var(--width-measure);
   }
 
   .product-hero__brand {
@@ -2182,6 +2190,9 @@
   .pilot-hero__copy {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
+  }
+
+  .pilot-hero__copy > * {
     max-width: var(--width-measure);
   }
 
@@ -2266,7 +2277,7 @@
     margin-inline: auto;
   }
 
-  .pilot-section__inner--narrow {
+  .pilot-section__inner--narrow > * {
     max-width: var(--width-measure);
   }
 
@@ -2278,12 +2289,9 @@
     max-width: none;
   }
 
-  .pilot-section__inner--form .pilot-heading {
-    max-width: var(--width-form);
-  }
-
+  .pilot-section__inner--form .pilot-heading,
   .pilot-form {
-    max-width: var(--width-form);
+    max-width: var(--width-measure);
   }
 
   .pilot-mvp {
@@ -2679,8 +2687,11 @@
   .contribute-hero__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
-    max-width: var(--width-measure);
     animation: home-fade-up 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .contribute-hero__inner > * {
+    max-width: var(--width-measure);
   }
 
   .contribute-hero__brand {
@@ -3032,8 +3043,11 @@
   .about-hero__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
-    max-width: var(--width-measure);
     animation: home-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .about-hero__inner > * {
+    max-width: var(--width-measure);
   }
 
   .about-hero__brand {
@@ -3453,8 +3467,11 @@
   .privacy-hero__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
-    max-width: var(--width-measure);
     animation: home-fade-up 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .privacy-hero__inner > * {
+    max-width: var(--width-measure);
   }
 
   .privacy-hero__brand {
@@ -3502,16 +3519,13 @@
   .privacy-section__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
+  }
+
+  .privacy-section__inner > * {
     max-width: var(--width-measure);
   }
 
   .privacy-section__inner--form {
-    max-width: var(--width-measure);
-  }
-
-  .privacy-section__inner--form .privacy-heading,
-  .privacy-section__inner--form .privacy-body,
-  .privacy-form {
     max-width: none;
   }
 
@@ -3541,7 +3555,7 @@
 
   .privacy-body {
     margin: 0 0 1.1rem;
-    max-width: none;
+    max-width: var(--width-measure);
     color: var(--color-ink-muted);
     font-size: var(--text-body);
     line-height: 1.7;
@@ -3748,8 +3762,11 @@
   .careers-hero__inner {
     width: min(var(--width-site), calc(100% - 2rem));
     margin-inline: auto;
-    max-width: 46rem;
     animation: home-fade-up 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .careers-hero__inner > * {
+    max-width: 46rem;
   }
 
   .careers-hero__eyebrow {
@@ -3905,7 +3922,7 @@
     margin-inline: auto;
   }
 
-  .careers-section__inner--narrow {
+  .careers-section__inner--narrow > * {
     max-width: var(--width-measure);
   }
 
@@ -4248,7 +4265,7 @@
     position: relative;
     display: grid;
     gap: 1.15rem;
-    max-width: var(--width-form);
+    max-width: var(--width-measure);
   }
 
   .careers-field {
@@ -4293,7 +4310,7 @@
   }
 
   .careers-field textarea.careers-resume {
-    min-height: min(70vh, 42rem);
+    min-height: 10rem;
   }
 
   .careers-field select {
