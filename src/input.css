@@ -2041,6 +2041,14 @@
 
   .product-compare {
     padding-block: 3.25rem 4.5rem;
+    background:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        color-mix(in oklab, var(--color-pine) 7%, var(--color-canvas)) 8%,
+        color-mix(in oklab, var(--color-pine) 7%, var(--color-canvas)) 92%,
+        transparent 100%
+      );
   }
 
   @media (min-width: 768px) {
@@ -2067,67 +2075,89 @@
   }
 
   .product-compare__scroll {
-    margin-top: 0.85rem;
+    margin-top: 1.35rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
-    border-radius: 1rem;
+    border: 1px solid color-mix(in oklab, var(--color-pine) 16%, var(--color-line));
+    border-radius: 1.15rem;
     background: var(--color-surface);
+    box-shadow: 0 12px 32px color-mix(in oklab, var(--color-pine-dark) 7%, transparent);
   }
 
   .product-compare table {
     width: 100%;
-    min-width: 62rem;
-    border-collapse: collapse;
+    min-width: 48rem;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 0.98rem;
-    line-height: 1.45;
+    line-height: 1.5;
   }
 
   .product-compare th,
   .product-compare td {
-    padding: 0.9rem 1rem;
+    padding: 1rem 1.1rem;
     text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 82%, transparent);
   }
 
-  .product-compare tr:last-child td {
+  .product-compare tbody tr:last-child th,
+  .product-compare tbody tr:last-child td {
     border-bottom: 0;
   }
 
-  .product-compare th {
-    background: color-mix(in oklab, var(--color-pine) 12%, var(--color-surface));
-    color: var(--color-pine-dark);
-    font-weight: 700;
+  .product-compare thead th {
+    background: var(--color-pine-dark);
+    color: #f4f8f6;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1rem;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+    border-bottom: 0;
   }
 
-  .product-compare td:first-child,
+  .product-compare thead th:nth-child(2) {
+    background: color-mix(in oklab, var(--color-moss) 42%, var(--color-pine));
+  }
+
   .product-compare tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 12.5rem;
     color: var(--color-ink);
     font-weight: 700;
     background: var(--color-surface);
+    box-shadow: 1px 0 0 color-mix(in oklab, var(--color-line) 90%, transparent);
   }
 
-  .product-compare tbody tr:nth-child(even) td,
-  .product-compare tbody tr:nth-child(even) th {
-    background: color-mix(in oklab, var(--color-canvas) 55%, var(--color-surface));
+  .product-compare tbody tr:nth-child(even) th,
+  .product-compare tbody tr:nth-child(even) td {
+    background: color-mix(in oklab, var(--color-canvas) 72%, var(--color-surface));
   }
 
-  .product-compare th:nth-child(2),
   .product-compare td:nth-child(2) {
-    background: color-mix(in oklab, var(--color-pine) 14%, var(--color-surface));
+    background: color-mix(in oklab, var(--color-pine) 10%, var(--color-surface));
+    box-shadow: inset 3px 0 0 color-mix(in oklab, var(--color-moss) 75%, var(--color-pine));
   }
 
   .product-compare tbody tr:nth-child(even) td:nth-child(2) {
-    background: color-mix(in oklab, var(--color-pine) 18%, var(--color-surface));
+    background: color-mix(in oklab, var(--color-pine) 15%, var(--color-surface));
+  }
+
+  .product-compare td:nth-child(2) strong {
+    color: var(--color-pine-dark);
+    font-weight: 700;
   }
 
   .product-compare code {
     font-family: var(--font-mono);
     font-size: 0.86em;
-    padding: 0.05em 0.3em;
-    border-radius: 0.25rem;
-    background: color-mix(in oklab, var(--color-pine) 10%, var(--color-surface));
+    padding: 0.08em 0.35em;
+    border-radius: 0.3rem;
+    background: color-mix(in oklab, var(--color-pine) 12%, var(--color-surface));
+    color: var(--color-pine-dark);
   }
 
   @media (prefers-reduced-motion: reduce) {
