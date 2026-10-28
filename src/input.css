@@ -1757,26 +1757,32 @@
     border-top: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 720px) {
     .product-wearables__pair {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 3rem;
+      grid-template-columns: minmax(0, 1fr) 22rem;
+      grid-template-areas: "copy media";
+      column-gap: 3rem;
+      align-items: center;
     }
 
-    .product-wearables__pair--reverse {
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    .product-wearables__copy {
+      grid-area: copy;
     }
 
-    .product-wearables__pair--reverse .product-wearables__media {
-      order: 2;
+    .product-wearables__media {
+      grid-area: media;
+      justify-self: end;
     }
   }
 
   .product-wearables__media {
-    margin: 0;
+    width: min(100%, 22rem);
+    margin: 0 auto;
     border-radius: 1.25rem;
     overflow: hidden;
-    background: color-mix(in oklab, var(--color-surface) 80%, var(--color-canvas-deep));
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 42%, rgba(90, 125, 108, 0.1), transparent 70%),
+      var(--color-surface);
     border: 1px solid color-mix(in oklab, var(--color-line) 75%, transparent);
   }
 
@@ -1784,18 +1790,18 @@
     display: block;
     width: 100%;
     height: auto;
+    object-fit: contain;
+  }
+
+  .product-wearables__media--ring {
+    aspect-ratio: 1436 / 1075;
   }
 
   .product-wearables__media--pendant {
-    width: min(100%, 22rem);
-    margin-inline: auto;
-    justify-self: center;
     aspect-ratio: 542 / 613;
-    background:
-      radial-gradient(ellipse 70% 60% at 50% 42%, rgba(90, 125, 108, 0.1), transparent 70%),
-      var(--color-surface);
   }
 
+  .product-wearables__media--ring img,
   .product-wearables__media--pendant img {
     width: 100%;
     height: 100%;
