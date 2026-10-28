@@ -45,7 +45,7 @@
       var relationship = form.querySelector("#pilot-relationship");
       var city = form.querySelector("#pilot-city");
       var situation = form.querySelector("#pilot-situation");
-      var tabletChecked = form.querySelector('input[name="android_tablet"]:checked');
+      var tabletChecked = form.querySelector('input[name="tablet"]:checked');
       var osChecked = form.querySelector('input[name="caregiver_os"]:checked');
       var wifiChecked = form.querySelector('input[name="wifi"]:checked');
       var languageChecked = form.querySelector('input[name="language"]:checked');
@@ -91,8 +91,8 @@
 
       if (!tabletChecked) {
         showError(
-          "Please tell us whether your senior has a compatible Android tablet.",
-          form.querySelector('input[name="android_tablet"]')
+          "Please tell us whether your senior has a tablet.",
+          form.querySelector('input[name="tablet"]')
         );
         return;
       }
