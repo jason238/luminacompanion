@@ -448,42 +448,42 @@
     color: #f7faf8;
   }
 
-  .home-hero__eyebrow {
-    margin: 0 0 0.55rem;
-    color: color-mix(in oklab, #eef4f1 82%, transparent);
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    line-height: 1.4;
-  }
-
-  /* Hook */
+  /* Main title */
   .home-hero__headline {
-    margin: 0 0 0.85rem;
+    margin: 0 0 0.75rem;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+    font-size: clamp(2.15rem, 5vw, 3.25rem);
     letter-spacing: -0.03em;
-    line-height: 1.15;
+    line-height: 1.12;
     color: #f7faf8;
     text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
     text-wrap: balance;
   }
 
-  /* Positioning */
+  /* Subtitle */
   .home-hero__subhead {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+    color: rgba(247, 250, 248, 0.95);
+    text-wrap: pretty;
+  }
+
+  /* Body */
+  .home-hero__body {
     margin: 0;
+    max-width: 40rem;
     font-family: var(--font-sans);
     font-weight: 400;
     font-size: var(--text-photo-subhead);
     letter-spacing: 0;
     line-height: 1.65;
-    color: rgba(247, 250, 248, 0.92);
+    color: rgba(247, 250, 248, 0.9);
     text-wrap: pretty;
-  }
-
-  .home-hero__subhead + .home-hero__subhead {
-    margin-top: 0.2rem;
   }
 
   /* Value */
@@ -1270,8 +1270,25 @@
   }
 
   .home-intro {
+    padding-bottom: 1.75rem;
     background: color-mix(in oklab, var(--color-surface) 72%, transparent);
-    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+    border-top: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-intro + .home-vision-diagram {
+    padding-block: 0 3.5rem;
+    background: color-mix(in oklab, var(--color-surface) 72%, transparent);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    .home-intro {
+      padding-bottom: 2rem;
+    }
+
+    .home-intro + .home-vision-diagram {
+      padding-block: 0 4.5rem;
+    }
   }
 
   .home-ways {
@@ -1284,6 +1301,12 @@
     display: grid;
     gap: 1.25rem;
     margin-top: 2rem;
+  }
+
+  @media (min-width: 800px) {
+    .home-ways-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .home-way {
