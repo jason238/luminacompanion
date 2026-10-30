@@ -2604,6 +2604,22 @@
     margin-bottom: 0.35rem;
   }
 
+  .pilot-emphasis {
+    margin: 1.5rem 0 0;
+    max-width: var(--width-measure);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    letter-spacing: -0.015em;
+    line-height: 1.45;
+  }
+
+  .pilot-subheading + .pilot-body {
+    margin-top: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+
   .pilot-note {
     margin: 1.5rem 0 0;
     max-width: var(--width-measure);
