@@ -448,6 +448,15 @@
     color: #f7faf8;
   }
 
+  .home-hero__eyebrow {
+    margin: 0 0 0.55rem;
+    color: color-mix(in oklab, #eef4f1 82%, transparent);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+
   /* Hook */
   .home-hero__headline {
     margin: 0 0 0.85rem;
@@ -1187,155 +1196,181 @@
     }
   }
 
-  /* ---- Homepage sections (Oct 2026 copy) ---- */
+  /* ---- Homepage sections (from docs/HOME.markdown) ---- */
   #how-it-works,
+  #demo,
   #apply {
     scroll-margin-top: 5.5rem;
   }
 
-  .home-gap__list {
-    margin: 1rem 0 0;
+  .home-emphasis {
+    margin: 1.35rem 0;
+    max-width: var(--width-measure);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    letter-spacing: -0.015em;
+    line-height: 1.45;
+  }
+
+  .home-hook .home-lede,
+  .home-hook .home-body,
+  .home-intro .home-body,
+  .home-simple .home-body,
+  .home-connected .home-body,
+  .home-trust .home-body {
+    margin-top: 1rem;
+  }
+
+  .home-hook .home-lede {
+    margin-top: 0;
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .home-hook__list,
+  .home-simple__list,
+  .home-trust__list {
+    margin: 1.35rem 0 0;
     padding: 0;
     list-style: none;
     display: grid;
-    gap: 0.55rem;
+    gap: 0.9rem;
   }
 
-  .home-gap__list li {
+  .home-hook__list li,
+  .home-simple__list li,
+  .home-trust__list li {
     position: relative;
     padding-left: 1.2rem;
     color: var(--color-ink-muted);
     font-size: var(--text-body);
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
-  .home-gap__list li::before {
+  .home-hook__list li::before,
+  .home-simple__list li::before,
+  .home-trust__list li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.6em;
+    top: 0.65em;
     width: 0.42rem;
     height: 0.42rem;
     border-radius: 999px;
     background: var(--color-pine);
   }
 
-  .home-callout {
-    margin: 1.75rem 0 0;
-    padding: 1.15rem 1.25rem;
-    border-left: 3px solid var(--color-warm);
-    border-radius: 0 1rem 1rem 0;
-    background: color-mix(in oklab, var(--color-surface) 80%, transparent);
-  }
-
-  .home-callout p {
-    margin: 0;
+  .home-hook__list strong,
+  .home-simple__list strong,
+  .home-trust__list strong {
     color: var(--color-ink);
-    font-size: var(--text-body);
-    line-height: 1.7;
+    font-weight: 700;
   }
 
-  .home-solve {
+  .home-intro {
     background: color-mix(in oklab, var(--color-surface) 72%, transparent);
     border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
   }
 
-  .home-solve__figure {
-    margin: 0 0 2rem;
-    max-width: 28rem;
+  .home-ways {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(154, 123, 82, 0.08), transparent 55%),
+      color-mix(in oklab, var(--color-canvas-deep) 35%, var(--color-surface));
   }
 
-  .home-solve__figure img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center 22%;
-    border-radius: 1.15rem;
-  }
-
-  .home-solve__figure figcaption {
-    margin-top: 0.75rem;
-    color: var(--color-ink-muted);
-    font-size: 0.98rem;
-    line-height: 1.5;
-  }
-
-  .home-solve-grid {
+  .home-ways-grid {
     display: grid;
     gap: 1.25rem;
-    margin-top: 1.75rem;
+    margin-top: 2rem;
   }
 
-  @media (min-width: 800px) {
-    .home-solve-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  .home-solve-card {
+  .home-way {
     margin: 0;
-    padding: 1.35rem 1.25rem 1.4rem;
+    padding: 1.5rem 1.35rem 1.55rem;
     border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
     border-radius: 1.15rem;
     background: var(--color-surface);
   }
 
-  .home-solve-card__title {
+  .home-way__num {
+    margin: 0 0 0.45rem;
+    color: var(--color-moss);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+  }
+
+  .home-way__title {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     letter-spacing: -0.02em;
     line-height: 1.25;
     color: var(--color-pine-dark);
   }
 
-  .home-solve-card__kicker {
-    margin: 0.35rem 0 0;
-    color: var(--color-moss);
-    font-size: 0.92rem;
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
-  .home-solve-card__label {
-    margin: 1rem 0 0.3rem;
+  .home-way__kicker {
+    margin: 0.45rem 0 0;
     color: var(--color-ink);
-    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 1.02rem;
+    line-height: 1.45;
   }
 
-  .home-solve-card__body {
+  .home-way__body {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .home-way__body p,
+  .home-way__body li {
     margin: 0;
     color: var(--color-ink-muted);
     font-size: 0.98rem;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
-  .home-solve-card__body + .home-solve-card__body {
-    margin-top: 0.65rem;
+  .home-way__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
   }
 
-  .home-solve-card__body strong {
-    color: var(--color-ink);
-    font-weight: 700;
+  .home-way__body li {
+    position: relative;
+    padding-left: 1.1rem;
   }
 
-  .home-solve__note {
-    margin: 1.5rem 0 0;
-    max-width: var(--width-measure);
-    color: var(--color-ink-muted);
-    font-size: 0.95rem;
-    font-style: italic;
-    line-height: 1.55;
+  .home-way__body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 999px;
+    background: var(--color-pine);
   }
 
-  .home-solve__more,
-  .home-trust__more {
+  .home-way__close {
     margin: 1.15rem 0 0;
+    color: var(--color-pine-dark);
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .home-ways__more,
+  .home-trust__more {
+    margin: 1.5rem 0 0;
   }
 
   .home-text-link {
@@ -1348,10 +1383,70 @@
     text-decoration: underline;
   }
 
-  .home-step__icon {
+  .home-system {
+    background: color-mix(in oklab, var(--color-surface) 70%, transparent);
+    border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
+  }
+
+  .home-system-grid {
+    display: grid;
+    gap: 1.15rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 700px) {
+    .home-system-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .home-system-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .home-system-card {
+    margin: 0;
+    padding: 1.25rem 1.2rem 1.35rem;
+    border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
+    border-radius: 1.15rem;
+    background: var(--color-surface);
+  }
+
+  .home-system-card__title {
+    margin: 0;
     font-family: var(--font-display);
     font-weight: 650;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    color: var(--color-pine-dark);
+  }
+
+  .home-system-card__kicker {
+    margin: 0.35rem 0 0;
+    color: var(--color-moss);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .home-system-card__body {
+    margin: 0.75rem 0 0;
+    color: var(--color-ink-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .home-system__close {
+    margin-top: 1.75rem;
+  }
+
+  .home-connected {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(90, 125, 108, 0.12), transparent 55%),
+      color-mix(in oklab, var(--color-canvas-deep) 40%, var(--color-surface));
   }
 
   .home-families .home-lede {
@@ -1411,6 +1506,8 @@
 
   .home-quote figcaption {
     margin: 0.9rem 1.15rem 0;
+    display: grid;
+    gap: 0.25rem;
     color: var(--color-pine-dark);
     font-family: var(--font-display);
     font-weight: 650;
@@ -1418,10 +1515,22 @@
     line-height: 1.4;
   }
 
+  .home-quote__detail {
+    color: var(--color-ink-muted);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .home-families__demo {
+    margin-top: 2rem;
+  }
+
   .home-video {
     display: grid;
     place-items: center;
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
     max-width: 52rem;
     aspect-ratio: 16 / 9;
     border: 1px solid color-mix(in oklab, var(--color-line) 80%, transparent);
@@ -1445,44 +1554,37 @@
     border-block: 1px solid color-mix(in oklab, var(--color-line) 70%, transparent);
   }
 
-  .home-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    margin: 0.25rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .home-badges li {
-    padding: 0.55rem 0.85rem;
-    border: 1px solid color-mix(in oklab, var(--color-pine) 28%, var(--color-line));
-    border-radius: 999px;
-    background: var(--color-surface);
-    color: var(--color-pine-dark);
-    font-size: 0.95rem;
+  .home-invite__eyebrow {
+    margin: 0 0 0.65rem;
+    color: color-mix(in oklab, #eef4f1 78%, transparent);
+    font-size: 1.05rem;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
-  .home-founder {
-    margin: 2rem 0 0;
-    max-width: 40rem;
-  }
-
-  .home-founder p {
-    margin: 0;
-    color: var(--color-ink);
+  .home-invite__emphasis {
+    margin: 1.35rem 0;
+    max-width: var(--width-measure);
+    color: #f7faf8;
     font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    font-weight: 650;
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    letter-spacing: -0.015em;
     line-height: 1.45;
   }
 
-  .home-founder footer {
-    margin-top: 0.85rem;
-    color: var(--color-ink-muted);
-    font-weight: 700;
+  .home-invite__subhead {
+    margin: 1.75rem 0 0;
+    color: #f7faf8;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  .home-invite .home-body + .home-body {
+    margin-top: 1rem;
   }
 
   .home-apply__waitlist {
